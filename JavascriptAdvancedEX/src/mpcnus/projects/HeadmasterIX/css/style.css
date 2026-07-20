@@ -1,0 +1,32 @@
+/* Hoofdstukken */
+.hoofdstukken {
+  counter-reset: hoofdstuk;
+  list-style: none;
+}
+
+.hoofdstukken > li {
+  counter-increment: hoofdstuk;
+}
+
+.hoofdstukken > li > h2::before {
+  content: counter(hoofdstuk) ". ";
+  font-weight: bold;
+}
+
+/* Subhoofdstukken */
+.hoofdstukken > li {
+  counter-reset: subhoofdstuk;
+}
+
+.subhoofdstukken {
+  list-style: none;
+}
+
+.subhoofdstukken > li {
+  counter-increment: subhoofdstuk;
+}
+
+.subhoofdstukken > li > h3::before {
+  content: counter(hoofdstuk) "." counter(subhoofdstuk) " ";
+  font-weight: bold;
+}

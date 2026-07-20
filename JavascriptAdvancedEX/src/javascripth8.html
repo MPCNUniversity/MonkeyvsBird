@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="h8-document-roots">
+                <h3 class="text-white">H8 – Document Roots Dashboard</h3>
+
+                <!-- Navbar -->
+                <nav class="navbar navbar-light bg-light border rounded px-3 mb-4">
+                    <span class="navbar-brand fw-semibold text-white">DOM Root Info</span>
+                    <button id="rn_refresh" type="button" class="btn btn-outline-success btn-sm ms-auto">
+                        Verversen
+                    </button>
+
+
+                </nav>
+
+                <!-- Table with badges -->
+                <table class="table table-bordered align-middle text-center">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Node</th>
+                        <th>Naam</th>
+                        <th>Children count</th>
+                        <th>Heeft children?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- documentElement (HTML) -->
+                    <tr>
+                        <td><code>document.documentElement</code></td>
+                        <td><span id="rn_html_name" class="badge text-bg-secondary">-
+</span></td>
+                        <td><span id="rn_html_children" class="badge text-bg-secondary">0</span></td>
+                        <td><span id="rn_html_has" class="badge text-bg-secondary">false</span></td>
+                    </tr>
+                    <!-- head -->
+                    <tr>
+                        <td><code>document.head</code></td>
+                        <td><span id="rn_head_name" class="badge text-bg-secondary">-
+</span></td>
+                        <td><span id="rn_head_children" class="badge text-bg-secondary">0</span></td>
+                        <td><span id="rn_head_has" class="badge text-bg-secondary">false</span></td>
+                    </tr>
+                    <!-- body -->
+                    <tr>
+                        <td><code>document.body</code></td>
+                        <td><span id="rn_body_name" class="badge text-bg-secondary">-
+</span></td>
+                        <td><span id="rn_body_children" class="badge text-bg-secondary">0</span></td>
+                        <td><span id="rn_body_has" class="badge text-bg-secondary">false</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H8 — Document Roots Dashboard</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Hoofdstuk 8: DOM Nodes & Root Nodes
+<br>                                    // Oefening H8-A — Document Roots Dashboard
+<br>                                    // ----------------------------------
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>                                    const btn = document.getElementById('rn_refresh');
+<br>
+<br>                                    // Hulpfunctie: schrijf waardes in 3 badges van één rij
+<br>                                    function vulRij(idName, idChildren, idHas, node) {
+<br>                                    // nodeName: bv. "HTML", "HEAD", "BODY"
+<br>                                    document.getElementById(idName).textContent = node.nodeName;
+<br>
+<br>                                    // children.length: aantal element-kinderen
+<br>                                    document.getElementById(idChildren).textContent = node.children.length;
+<br>
+<br>                                    // hasChildNodes(): true/false als string
+<br>                                    document.getElementById(idHas).textContent = node.hasChildNodes() ? 'true' : 'false';
+<br>                                    }
+<br>
+<br>                                    // Ververs alle root-infos
+<br>                                    function verversRoots() {
+<br>                                    // Root nodes
+<br>                                    const htmlNode = document.documentElement; // < html>
+<br>                                const headNode = document.head;            // < head>
+<br>                                    const bodyNode = document.body;            // < body>
+<br>
+<br>                                // HTML-rij
+<br>                                vulRij('rn_html_name', 'rn_html_children', 'rn_html_has', htmlNode);
+<br>
+<br>                                // HEAD-rij
+<br>                                vulRij('rn_head_name', 'rn_head_children', 'rn_head_has', headNode);
+<br>
+<br>                                // BODY-rij
+<br>                                vulRij('rn_body_name', 'rn_body_children', 'rn_body_has', bodyNode);
+<br>                                }
+<br>
+<br>                                // Klik op "Verversen"
+<br>                                btn.addEventListener('click', verversRoots);
+<br>
+<br>                                // Initieel één keer meten bij laden
+<br>                                verversRoots();
+<br>                                });
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="mpc.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">home</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

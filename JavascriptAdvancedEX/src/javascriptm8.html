@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main5.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="ex-m8">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <span>Oefening M8 — Focus &amp; Field Monitor</span>
+                                <span class="badge bg-light text-primary">DOM properties &amp; acties</span>
+                            </div>
+                            <div class="card-body">
+                                <!-- Invoerblokken-->
+                                <div id="m8_group_title" class="mb-3 p-3 border rounded-3 bg-light">
+                                    <label for="m8_title" class="form-label mb-1">Titel</label>
+                                    <input
+                                            id="m8_title"
+                                            class="form-control"
+                                            placeholder="bv. Mijn eerste JavaScript-project"
+                                    />
+                                    <div id="m8_title_help" class="form-text mt-1 text-muted">
+                                        Titel is verplicht.
+                                    </div>
+                                </div>
+                                <div id="m8_group_desc" class="mb-3 p-3 border rounded-3 bg-light">
+                                    <label for="m8_desc" class="form-label mb-1">Korte
+                                        beschrijving</label>
+                                    <textarea
+                                            id="m8_desc"
+                                            class="form-control"
+                                            rows="3"
+                                            placeholder="Beschrijf in minstens 10 tekens wat je project doet."
+                                    >
+                                    </textarea>
+                                    <div id="m8_desc_help" class="form-text mt-1 text-muted">
+                                        Minstens 10 tekens.
+                                    </div>
+                                </div>
+                                <div id="m8_group_email" class="mb-3 p-3 border rounded-3 bg-primary">
+                                    <label for="m8_email" class="form-label mb-1">E-mail</label>
+                                <input
+                                        id="m8_email"
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="bv. jij@voorbeeld.be"
+                                />
+                                <div id="m8_email_help" class="form-text mt-1 text-muted">
+                                    E-mailadres bevat minstens een @ en een punt.
+                                </div>
+                            </div>
+                            <!-- Actieknop-->
+                            <button id="m8_focus_btn" class="btn btn-primary w-100 mb-3">
+                                Focus op lege velden
+                            </button>
+                            <!-- Status van aantal ingevulde velden-->
+                            <div id="m8_status" class="alert alert-secondary mb-3"
+                                 role="status" aria-live="polite">
+                                Nog geen velden ingevuld.
+                            </div>
+                            <!-- Samenvatting-->
+                            <div class="card bg-light border-0">
+                                <div class="card-header bg-white border-0 pb-1">
+                                    <h6 class="card-title mb-0">Samenvatting</h6>
+                                </div>
+                                <div class="card-body pt-2">
+                                    <ul id="m8_summary" class="list-unstyled mb-0">
+                                        <li class="text-muted">Samenvatting verschijnt zodra alle
+                                            velden geldig zijn.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+
+
+
+            <span ><a href="javascriptm9.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">ga naar oefening M9</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

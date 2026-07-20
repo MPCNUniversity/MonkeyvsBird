@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta content="Friedel Majoor" name="author">
+    <script src="./js/main5.js" type="module"></script>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+          rel="stylesheet">
+    <!-- or -->
+    <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+          rel="stylesheet">
+</head>
+<body class="bg-primary">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img class="rounded-pill m-1" src="images/hexie.gif"
+                             style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a aria-current="page" class="nav-link active border elegant-link" href="home.html"
+                                   style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html"
+                                   style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a aria-expanded="false" class="nav-link dropdown-toggle border elegant-link" data-bs-toggle="dropdown"
+                                   href="#" role="button"
+                                   style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html"
+                                           style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a>
+                                    </li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html"
+                                           style="background: url(images/rangerOnlineOcean.gif);">oefenbundel
+                                        oefeningen</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item elegant-link m-2"
+                                           href="javascriptoefenbundelrekenmachine.html"
+                                           style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="ex-m14">
+                <div class="row justify-content-center">
+                    <div class="col-md-11 col-lg-9">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-info text-white">
+                                Oefening M14 — Rick & Morty Mini-Viewer
+                            </div>
+                            <div class="card-body">
+                                <button id="m14_load" class="btn btn-info w-100 mb-3">
+                                    Personages laden
+                                </button>
+                                <div class="mb-3">
+                                    <label for="m14_search" class="form-label">Filter op naam</label>
+                                    <input
+                                            id="m14_search"
+                                            class="form-control"
+                                            placeholder="Typ om te filteren…"
+                                            disabled
+                                    />
+                                </div>
+                                <div id="m14_status" class="alert alert-secondary mb-3"
+                                     role="status" aria-live="polite">
+                                    Klik op "Personages laden" om te beginnen.
+                                </div>
+                                <div id="m14_cards" class="row g-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <span><a class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link"
+                     href="home.html">home</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

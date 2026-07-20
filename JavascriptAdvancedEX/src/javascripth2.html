@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+
+            <section class="container py-4" id="h2-scope-lab">
+                <h3 class="text-white">H2 – Scope Lab</h3>
+
+                <!-- Actieknoppen en status -->
+                <div class="mb-3 d-flex align-items-center gap-2">
+                    <button id="sc_global" class="btn btn-secondary">Run global()</button>
+                    <button id="sc_local" class="btn btn-secondary">Run local()</button>
+
+                    <!-- Status badge -->
+                    <span id="sc_status" class="badge text-bg-secondary">Nog niet uitgevoerd</span>
+                </div>
+
+                <!-- Resultaat variabelenlijst -->
+                <ul id="sc_vars" class="list-group mb-3"></ul>
+
+                <!-- Accordion uitleg -->
+                <div class="accordion" id="sc_acc">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="sc_acc_header">
+                            <button class="accordion-button" type="button" data-bs-
+                                    toggle="collapse" data-bs-target="#sc_acc_body">
+                                Function scope vs Block scope
+                            </button>
+                        </h2>
+                        <div id="sc_acc_body" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                In JavaScript is <code>var</code> function-scoped, wat betekent dat
+                                hij binnen de volledige functie blijft bestaan.
+                                <code>let</code> en <code>const</code> zijn block-scoped en bestaan
+                                enkel binnen de accolades waarin ze zijn gedeclareerd.
+                                Hoisting werkt anders voor var dan voor let/const, wat invloed
+                                heeft op bereikbaarheid.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H2 — scope lab</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // h2
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>                                    // UI refs
+<br>                                    const btnGlobal = document.getElementById('sc_global');
+<br>                                    const btnLocal  = document.getElementById('sc_local');
+<br>                                    const statusBad = document.getElementById('sc_status');
+<br>                                    const listBox   = document.getElementById('sc_vars');
+<br>
+<br>                                    // ---------- PURE FUNCTIES (LOGICA) ----------
+<br>                                    // Leveren enkel data (strings) terug, geen DOM manipulatie
+<br>
+<br>                                    // Simuleer wat zichtbaar is na een blok binnen dezelfde functie
+<br>                                    function globalData() {
+<br>                                    // In een echte demo zou je var/let/const in blokken zetten.
+<br>                                    // Voor het Functions-hoofdstuk volstaat de correcte uitkomst-lijst.
+<br>                                    return [
+<br>                                    'var in functie: zichtbaar',
+<br>                                    'let in functie: zichtbaar',
+<br>                                    'const in functie: zichtbaar',
+<br>                                    'var in blok: zichtbaar',
+<br>                                    'let in blok: niet zichtbaar',
+<br>                                    'const in blok: niet zichtbaar'
+<br>                                    ];
+<br>                                    }
+<br>
+<br>                                    // Toon dat let/const block-scoped zijn en buiten het blok niet beschikbaar
+<br>                                    function localData() {
+<br>                                    return [
+<br>                                    'var in blok: zichtbaar binnen functie',
+<br>                                    'let in blok: niet zichtbaar buiten blok',
+<br>                                    'const in blok: niet zichtbaar buiten blok'
+<br>                                    ];
+<br>                                    }
+<br>
+<br>                                    // Hulpfunctie: maak <li> lijst in één HTML-string
+<br>                                    function makeListHTML(items) {
+<br>                                    var html = '';
+<br>                                    for (var i = 0; i < items.length; i++) {
+<br>                                    html += '<li class="list-group-item">' + items[i] + '</li>';
+<br>                                    }
+<br>                                    return html;
+<br>                                    }
+<br>
+<br>                                    // ---------- IMPURE FUNCTIES (UI) ----------
+<br>
+<br>                                    function runGlobal() {
+<br>                                    // status badge
+<br>                                    statusBad.className = 'badge text-bg-primary';
+<br>                                    statusBad.textContent = 'global uitgevoerd';
+<br>
+<br>                                    // lijst vullen
+<br>                                    var items = globalData();
+<br>                                    listBox.innerHTML = makeListHTML(items);
+<br>                                    }
+<br>
+<br>                                    function runLocal() {
+<br>                                    // status badge
+<br>                                    statusBad.className = 'badge text-bg-info';
+<br>                                    statusBad.textContent = 'local uitgevoerd';
+<br>
+<br>                                    // lijst vullen
+<br>                                    var items = localData();
+<br>                                    listBox.innerHTML = makeListHTML(items);
+<br>                                    }
+<br>
+<br>                                    // Events koppelen
+<br>                                    btnGlobal.addEventListener('click', runGlobal);
+<br>                                    btnLocal.addEventListener('click', runLocal);
+<br>                                    });
+<br>
+<br>                                    /*
+<br>                                    * Wat zie je bij testen
+<br>
+<br>                                    Klik Run global() → badge wordt blauw met “global uitgevoerd” en de lijst bevat 6 regels waarin var ook buiten
+<br>                                    * het blok zichtbaar is, let/const niet.
+<br>
+<br>                                    Klik Run local() → badge wordt lichtblauw met “local uitgevoerd” en de lijst verandert naar 3 regels die
+<br>                                    * het block-scope verschil benadrukken.
+<br>
+<br>                                    Zo verschillen de lijsten bij beide runs en houd je je netjes aan de Functions-aanpak: pure berekening, impure UI.
+<br>                                    * */
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth2b.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H2b</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

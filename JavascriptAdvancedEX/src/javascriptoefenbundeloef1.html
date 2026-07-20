@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="bg-primary-translucent">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <button style="color: rgb(224 141 45/ 0.973)" class="btn btn-primary-subtle border rounded-4">
+            <h1><strong><em>MPCNetwork Javascript Cursus</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-3 m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+          </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="javascriptoefenbundelhome.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="javascriptcursus2025.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Cursus</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="oefenbundel2025deel1.pdf" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundeloef2.html" style="background: url(images/rangerOnlineOcean.gif);">Start oef 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+  <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-12">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">Oefening M1 — Som van twee getallen</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>Je leest de twee ingevoerde waarden uit de velden en verwijdert eventuele overtollige
+ spaties aan het begin en einde. Daarna beoordeel je of beide invoervelden effectief een
+ getal voorstellen. Wanneer één van de velden leeg is of geen geldig getal bevat, geef je
+ een waarschuwing weer: je verandert de stijl van het meldingsvak naar de gele variant
+ en toont exact de tekst “Vul twee geldige getallen in”. Wanneer beide waarden wel
+ geldig zijn, bereken je de som met een aparte rekenfunctie die uitsluitend het resultaat
+ teruggeeft. Vervolgens zet je het meldingsvak om naar de groene variant en toon je het
+ resultaat in de vorm “a + b = uitkomst”, waarbij je de actuele waarden en de berekende
+ uitkomst duidelijk in dezelfde regel weergeeft. Tot slot zorg je ervoor dat een klik op de
+ knop de volledige verwerking uitvoert, zodat de gebruiker telkens direct feedback ziet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>     
+
+<section class="container py-4" id="ex-m1">
+  <div class="row justify-content-center">
+    <div class="col-sm-10">
+      <div class="card shadow-sm">
+        <div class="card-header bg-5 text-white">Oefening M1 — Som van twee getallen</div>
+          <div class="card-body">
+            <label for="m1_a" class="form-label">Getal A</label>
+            <input id="m1_a" type="number" step="any" class="form-control mb-2"/>
+
+            <label for="m1_b" class="form-label">Getal B</label>
+            <input id="m1_b" type="number" step="any" class="form-control mb-2">
+            <button id="m1_btn" class="btn btn-primary w-100 mb-3">Bereken</button>
+            <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+              Resultaat verschijnt hier…
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening M1 — Som van twee getallen</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>hier komt de oplossing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptoefenbundeloef2.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 2</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<template>
+
+  <div>
+
+    <ButtonsArtifact left="50px" top="180px" tooltip="Captain Moroni" image="latterdaysaints/captain_moroni_title_liberty.jpeg" />
+    <ButtonsArtifact left="250px" top="180px" tooltip="" image="latterdaysaints/nephite_final_battle_lds.jpeg" />
+    <ButtonsArtifact left="450px" top="180px" tooltip="Stripling warriors" image="latterdaysaints/two_thousand_stripling_warriors.jpeg" />
+    <ButtonsArtifact left="650px" top="180px" tooltip="" image="latterdaysaints/bible_book_of_mormon.jpeg" />
+    <ButtonsArtifact left="850px" top="180px" tooltip="" image="latterdaysaints/gold_plates.jpeg" />
+    <ButtonsArtifact left="1050px" top="180px" tooltip="" image="latterdaysaints/gold_plates_replica_book_mormon.jpeg" />
+    <ButtonsArtifact left="1250px" top="180px" tooltip="" image="latterdaysaints/olegg.png" />
+
+    <ButtonsArtifact left="50px" top="380px" tooltip="four prophets" image="latterdaysaints/four_prophets.jpeg" />
+    <ButtonsArtifact left="250px" top="380px" tooltip="Nephi creates the plates" image="latterdaysaints/nephi_fashioning_the_plates.jpeg" />
+    <ButtonsArtifact left="450px" top="380px" tooltip="Jesus Christ" image="latterdaysaints/JesusChrist.png" />
+    <ButtonsArtifact left="650px" top="380px" tooltip="" image="latterdaysaints/christ_land_bountiful.jpeg" />
+    <ButtonsArtifact left="850px" top="380px" tooltip="" image="latterdaysaints/christ_teaching_nephites.jpeg" />
+    <ButtonsArtifact left="1050px" top="380px" tooltip="pray to the lord" image="latterdaysaints/teaching_true_doctrine.jpeg" />
+    <ButtonsArtifact left="1250px" top="380px" tooltip="Dear lord ..." image="latterdaysaints/MariaMagdalena.png" />
+
+    <ButtonsArtifact left="50px" top="580px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+    <ButtonsArtifact left="60px" top="570px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+    <ButtonsArtifact left="70px" top="560px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+    <ButtonsArtifact left="80px" top="550px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+    <ButtonsArtifact left="90px" top="540px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+    <ButtonsArtifact left="100px" top="530px" tooltip="sheppard" image="latterdaysaints/sheppard.png" />
+
+
+    <ButtonsArtifact left="250px" top="580px" tooltip="" image="latterdaysaints/olegg.png" />
+    <ButtonsArtifact left="450px" top="580px" tooltip="Hexanexus" image="hexanexus.png" />
+    <ButtonsArtifact left="650px" top="580px" tooltip="Home" image="home1.jpg" />
+    <ButtonsArtifact left="850px" top="580px" tooltip="dinotopia" image="dinotopia.png" />
+
+    <ButtonsArtifact left="50px" top="780px" tooltip="Map" image="hn_map3.png" />
+    <ButtonsArtifact left="250px" top="780px" tooltip="HallDeskMap" image="hn_map.png" />
+    <ButtonsArtifact left="450px" top="780px" tooltip="HallDesk" image="pionbord.png" />
+    <ButtonsArtifact left="650px" top="780px" tooltip="Ranger" image="rangeronlineocean.gif" />
+    <ButtonsArtifact left="850px" top="780px" tooltip="Steven Strickter" image="Steven2.png" />
+
+    <ButtonsArtifact left="50px" top="980px" tooltip="Adam Ai" image="Adamai.gif" />
+    <ButtonsArtifact left="250px" top="980px" tooltip="teampixl" image="teampixl.png" />
+    <ButtonsArtifact left="450px" top="980px" tooltip="Frieda" image="teampixl-Frieda.png" />
+    <ButtonsArtifact left="650px" top="980px" tooltip="Suit" image="teampixl-suit.png" />
+    <ButtonsArtifact left="850px" top="980px" tooltip="friedel@batjes" image="friedelbatjes.jpg" />
+
+
+
+    <ButtonsArtifact left="50px" top="1180px" tooltip="Headmaster Michael" image="teachernormal.gif" />
+    <ButtonsArtifact left="250px" top="1180px" tooltip="Librarian Michael" image="teacher.png" />
+    <ButtonsArtifact left="450px" top="1180px" tooltip="Headmaster Michael" image="teachernormal.gif" />
+    <ButtonsArtifact left="650px" top="1180px" tooltip="Librarian Michael" image="teacher.png" />
+    <ButtonsArtifact left="850px" top="1180px" tooltip="Headmaster Michael" image="teachernormal.gif" />
+
+
+    <ButtonsArtifact left="1450px" top="580px" tooltip="So i was invited by the engineers after a hard day of work in the factory. they had the parts we needed and ... and then ... Lorum Ipsum Extension of tekst timeline for instigator button of the tekstlint. managing size adaptations and first &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp blank space test" image="latterdaysaints/friedelcreatestheseer-orb.png" />
+    <ButtonsArtifact left="1050px" top="580px" tooltip="seer-orb" image="seer-orb.png" />
+    <ButtonsArtifact left="1650px" top="580px" tooltip="docking" image="seer-orbdocking.png" />
+    <ButtonsArtifact left="1250px" top="580px" tooltip="scanning..." image="seer-orbreconmode.png" />
+    <ButtonsArtifact left="1080px" top="565px" tooltip="Hallo, Ik ben" image="seer-orb.png" />
+    <ButtonsArtifact left="1650px" top="550px" tooltip="" image="seer-orbdocking.png" />
+
+    <ButtonsArtifact left="1050px" top="780px" tooltip="seer-orb" image="seer-orboff.png" />
+    <ButtonsArtifact left="1650px" top="780px" tooltip="~" image="seer-orbformal.png" />
+    <ButtonsArtifact left="1250px" top="780px" tooltip="scan.." image="hexa-lensseer-orb.png" />
+    <ButtonsArtifact left="1080px" top="765px" tooltip="friedel" image="hexa-lens.png" />
+    <ButtonsArtifact left="1650px" top="750px" tooltip="" image="Arionlesmultiversum.png" />
+
+    <ButtonsArtifact left="1440px" top="980px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1430px" top="970px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1420px" top="960px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1410px" top="950px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1400px" top="940px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1390px" top="930px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+
+    <ButtonsArtifact left="1450px" top="980px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1460px" top="970px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1470px" top="960px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1480px" top="950px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1490px" top="940px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1500px" top="930px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1516.0px" top="920.1px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1528.0px" top="920.7px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1540.0px" top="923.9px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1552.0px" top="929.7px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1564.0px" top="938.0px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1576.0px" top="948.6px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+    <ButtonsArtifact left="1588.0px" top="961.2px" tooltip="mpcnetwork" image="mpcnetworklogo.png" />
+  </div>
+</template>
+
+<script>
+import ButtonsArtifact from '~/components/Buttons/ButtonsArtifact.vue'
+import BackGround from '~/public/images/seer-orbdocking.png'
+export default {
+  components: { ButtonsArtifact }
+}
+</script>

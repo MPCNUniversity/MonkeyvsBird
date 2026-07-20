@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="h4-initials">
+                <h3 class="text-white">H4b – Initialen Generator</h3>
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Volledige naam</span>
+                    <input id="ig_full" class="form-control" placeholder="bv. Friedel Majoor">
+                    <button id="ig_make" class="btn btn-outline-success">Maak initialen</button>
+                </div>
+                <span id="ig_out" class="badge text-bg-secondary">-</span>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H4b — named functions: initialen generator</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Hoofdstuk 4: Named Functions
+<br>                                    // Oefening H4-B — Initialen Generator
+<br>                                    // ----------------------------------
+<br>                                    document.addEventListener("DOMContentLoaded", initInitialsGenerator);
+<br>
+<br>                                    // startpunt
+<br>                                    function initInitialsGenerator() {
+<br>                                    const inp  = document.getElementById("ig_full");
+<br>                                    const btn  = document.getElementById("ig_make");
+<br>                                    const out  = document.getElementById("ig_out");
+<br>
+<br>                                    btn.addEventListener("click", () => toonInitialen(inp, out));
+<br>                                    }
+<br>
+<br>                                    // ---------- PURE FUNCTION ----------
+<br>                                    function maakInitialen(naam) {
+<br>                                    // trimmen & splitsen op spaties
+<br>                                    // | Code                     | Betekenis in gewone taal                         |
+<br>                                    // | ------------------------ | ------------------------------------------------ |
+<br>                                    // | `naam.trim()`            | knipt spaties weg aan het begin en einde         |
+<br>                                    // | `.split(" ")`            | knipt de zin in stukjes waar spaties zitten      |
+<br>                                    // | `.filter(d => d !== "")` | gooit lege stukjes weg (bv. bij dubbele spaties) |
+<br>
+<br>                                    // Voorbeeld Invoer:
+<br>                                    //     " Tom Van Houtte "
+<br>                                    // trim() → "Tom Van Houtte"
+<br>                                    // split(" ") → ["Tom", "", "Van", "", "Houtte"]
+<br>                                    // filter(...) → ["Tom", "Van", "Houtte"]
+<br>
+<br>                                    const delen = naam.trim().split(" ").filter(d => d !== "");
+<br>
+<br>                                    // minstens 2 woorden
+<br>                                    if (delen.length < 2) return "onvolledige naam";
+<br>
+<br>                                    // eerste letter elk deel → uppercase → met punt
+<br>                                    // | Stap | `i` | `delen[i]` | `delen[i].charAt(0)` | `toUpperCase()` | Toevoegen (`res +=`)         |
+<br>                                    // | ---- | --- | ---------- | -------------------- | --------------- | ---------------------------- |
+<br>                                    // | 1    | 0   | `"Tom"`    | `"T"`                | `"T"`           | `"T."`                       |
+<br>                                    // | 2    | 1   | `"Van"`    | `"V"`                | `"V"`           | `"T." + "V."` → `"T.V."`     |
+<br>                                    // | 3    | 2   | `"Houtte"` | `"H"`                | `"H"`           | `"T.V." + "H."` → `"T.V.H."` |
+<br>                                    let res = "";
+<br>                                    for (let i = 0; i < delen.length; i++) {
+<br>                                    const letter = delen[i].charAt(0).toUpperCase();
+<br>                                    res += letter + ".";
+<br>                                    }
+<br>                                    return res;
+<br>                                    }
+<br>
+<br>                                    // ---------- IMPURE FUNCTION ----------
+<br>                                    function toonInitialen(inputEl, outputEl) {
+<br>                                    const naam = inputEl.value;
+<br>
+<br>                                    if (!naam.trim()) {
+<br>                                    outputEl.textContent = "onvolledige naam";
+<br>                                    return;
+<br>                                    }
+<br>
+<br>                                    const result = maakInitialen(naam);
+<br>                                    outputEl.textContent = result;
+<br>                                    }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth5.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H5</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

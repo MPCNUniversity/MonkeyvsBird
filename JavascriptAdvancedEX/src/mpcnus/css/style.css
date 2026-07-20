@@ -1,0 +1,49 @@
+  body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    /* display: flexbox;
+    justify-content: left;
+    align-items: flex-end;
+    height: 100vh; */
+    cursor: url('im/pen.png') 10 10, auto; /* Verplaats de hotspot als nodig */
+    background: url('im/desks/main1.png') no-repeat center center;
+    background-size: cover; /* Veranderd van 'cover' naar 'contain' */
+    background-attachment: scroll;
+    background-color: wheat; /* Optioneel: een kleur achter de afbeelding */
+  }
+
+
+/* Hoofdstukken 
+.hoofdstukken {
+  counter-reset: hoofdstuk;
+  list-style: none;
+}
+
+.hoofdstukken > li {
+  counter-increment: hoofdstuk;
+}
+
+.hoofdstukken > li > h2::before {
+  content: counter(hoofdstuk) ". ";
+  font-weight: bold;
+}
+
+/* Subhoofdstukken //
+.hoofdstukken > li {
+  counter-reset: subhoofdstuk;
+}
+
+.subhoofdstukken {
+  list-style: none;
+}
+
+.subhoofdstukken > li {
+  counter-increment: subhoofdstuk;
+}
+
+.subhoofdstukken > li > h3::before {
+  content: counter(hoofdstuk) "." counter(subhoofdstuk) " ";
+  font-weight: bold;
+}
+
+*/

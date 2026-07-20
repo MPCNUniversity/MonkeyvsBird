@@ -1,0 +1,36 @@
+{
+  "fullContentDial": {
+    "levels": [
+      {
+        "value": 5,
+        "label": "Basiszin",
+        "color": "#9be7ff",
+        "description": "Één zin per thema, minimale verbanden."
+      },
+      {
+        "value": 15,
+        "label": "Basisconcept",
+        "color": "#64b5f6",
+        "description": "Korte alinea per thema, eerste verbanden."
+      },
+      {
+        "value": 35,
+        "label": "Beginner Uitleg",
+        "color": "#42a5f5",
+        "description": "Meerdere alinea’s per thema, lichte synthese."
+      },
+      {
+        "value": 55,
+        "label": "Grondig Overzicht",
+        "color": "#1e88e5",
+        "description": "Volledige thematische dekking, holistische verbanden."
+      },
+      {
+        "value": 75,
+        "label": "Expert Documentary",
+        "color": "#0d47a1",
+        "description": "Volledige synthese, interdisciplinair, documentaire‑stijl."
+      }
+    ]
+  }
+}

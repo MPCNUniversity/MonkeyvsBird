@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript</title>
+    <meta author="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <script type="module" src="./js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/deskoff.css">
+
+
+</head>
+<body class="bg-primary-translucent">
+
+
+<div class="container">
+      <div class="row">
+            <div class="col-sm-12">
+
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+            <button style="color: rgb(224 141 45/ 0.973)" class="btn btn-primary-subtle border rounded-4">
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-3 m-1" style="background-color: rgba(224 141 45/ 0.973)">presents</i>
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+            </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="javascriptcursus2025.html" style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Cursus</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/deskbottom.png)">
+            <li><a class="dropdown-item elegant-link m-2" style="background: url(images/rangerOnlineOcean.gif)" href="oefenbundel2025deel1.pdf">oefenbundel</a></li>
+            <li><a class="dropdown-item elegant-link m-2" style="background: url(images/rangerOnlineOcean.gif)" href="javascriptoefenbundeloef1.html">Start -></a></li>
+            <li><hr class="dropdown-divider"></li> 
+            <li><a class="dropdown-item elegant-link m-2" style="background: url(images/rangerOnlineOcean.gif)" href="javascriptoefenbundelrekenmachine.html">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!--
+--
+    --
+        --
+            --
+                --
+                    -- begin van Rekenmachine layout
+                --
+            --
+        --
+    --
+-->
+<div style="height: 50px;"></div>
+
+
+<section class="container py-4" id="ex-calc">
+<div class="container-fluid">
+  <div class="row">
+    <div class="row d-flex justify-content-end">
+
+        <div class="col-sm-12 col-md-10 col-lg-8 col-xxl-6">
+            <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <span class="small">Rekenmachine</span>
+                <span class="small opacity-75">standaard</span>
+            </div>
+            <div class="card-body">
+            <!-- Display-->
+                <div class="border-1 text-black text-end p-2 fs-1" id="calc_display" aria-live="polite">0</div>
+            </div>
+            <div class="card-body pt-0 bg-8">
+            <!-- Memory row-->
+                <div class="d-grid gap-0 m-1 rounded-2" style="grid-template-columns: repeat(5, 1fr);">
+                    <button class="btn btn-outline-secondary p-2" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: bisque;" id="calc_mc">MC</button>
+                    <button class="btn btn-outline-secondary p-2" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: bisque;" id="calc_mr">MR</button>
+                    <button class="btn btn-outline-secondary p-2" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: bisque;" id="calc_mplus">M+</button>
+                    <button class="btn btn-outline-secondary p-2" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: bisque;" id="calc_mminus">M−</button>
+                    <button class="btn btn-outline-secondary p-2" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: bisque;" id="calc_ms">MS</button>
+                    <!-- <button class="btn btn-outline-secondary m-2 p-2" id="calc_mv" disabled>M▾</button> -->
+                </div>
+                <!-- Main keypad-->
+                <div class="d-grid gap-0 bg-2 rounded-2" style="grid-template-columns: repeat(4,1fr); background-color: aqua;">
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_pct">%</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_ce">CE</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_c">C</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_back">⌫</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_inv">1/x</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_pow2">x²</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_sqrt">√x</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-op="÷">÷</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="7">7</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="8">8</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="9">9</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-op="×">×</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="4">4</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="5">5</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="6">6</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-op="−">−</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="1">1</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="2">2</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="3">3</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-op="+">+</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_sign">+/−</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" data-digit="0">0</button>
+                    <button class="btn btn-outline-secondary p-2 m-2" style="background-color: bisque;" id="btn_comma">,</button>
+                    <button class="btn btn-primary" id="btn_eq">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!--
+--
+    --
+        --
+            --
+                --
+                    -- einde van Rekenmachine layout
+                --
+            --
+        --
+    --
+-->
+
+<div>
+  <div class="container">
+    <h1 class="title">Pixel animation</h1>
+    <button class="enter-button" onclick="enterSite()">sprite sheets</button>
+  </div>
+  <div class="container">
+    <h2 class="title">Personalisation</h2>
+    <button class="enter-button" onclick="enterSite1()">cursors</button>
+  </div>
+
+
+</div>
+  <button class="turbo-button" onclick="activateTurbo()">Turbo Mode</button>
+
+    <script>
+    function enterSite() {
+      console.log(`MPCNetwork University - Pixelated backgroundmovement`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = '#spritesheetchoice';
+    }
+        function enterSite1() {
+      console.log(`MPCNetwork University - Cursorchanging`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = '#cursorchoice';
+    }
+  </script>
+
+
+
+
+
+
+
+
+     <div class="container">
+  <div class="row">
+    <div class="col-sm-12 d-flex">
+      <button id="button1" class="text-white" style="background-size: contain; background: url(images/headmasterdesk.png);" >HeadmasterIX</button>
+      <button id="button2" class="text-white" style="background-size: contain; background: url(images/librarygrounds.png);" >Hexanexus bibliotheek gronden</button>
+      <button id="button3" class="text-white" style="background-size: contain; background: url(images/skyloftadventures.png);" >Skyloft Adventures</button>
+      <a href="Deskoff.html" style="background-size: contain; background: url(images/Desk2Desk_deskoff.png);"  class="txt-white btn btn-primary border-5">choose your background</a>
+      <button id="button4" class="text-white" style="background-size: contain; background: url(images/6);" >Walkway</button>
+      <button id="button5" class="text-white" style="background-size: contain; background: url(images/bosdesk.png);" >forrest</button>
+      <button id="button6" class="text-white" style="background-size: contain; background: url(images/rangerOnlineOcean.gif);" >Ranger's scouting station</button>
+    </div>
+  </div>
+</div>
+     <br>
+    </div>
+        <div class="col-sm-12">   
+            <!-- place content here -->
+             <span ><a href="javascriptoefenbundelhome.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">MPCNetwork home</a></span>
+
+
+        </div><!-- closing column -->
+  </div> <!-- closing row -->
+</div> <!-- closing container -->
+<footer>
+</footer>
+</body>
+</html>
+
+
+  <div class="artefact" style="left: 650px; top: 480px;"></div>
+  <div class="tooltip" style="color: aliceblue;">MPCNetwork - Home</div>
+</div>
+<script src="js/mpcnu6.js"></script>
+<script src="js/buttonmove.js"></script>
+</body>
+</html>

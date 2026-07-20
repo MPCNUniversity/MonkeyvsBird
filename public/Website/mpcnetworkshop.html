@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deskspace</title>
+   <!--
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfcfb;
+            color: #2ac22a;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .book-preview {
+            margin: 20px 0;
+        }
+        .book-preview img {
+            width: 250px;
+            height: 350px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .action-button {
+            background-color: #2ac22a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .action-button:hover {
+            background-color: #39FF14;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #eae7dc;
+            margin-top: 20px;
+        }
+    </style>
+  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+   <style>
+        body {
+            background-color: #333; /* Zachter groen */
+            margin: 0;
+            padding: 0;
+            border: 10px solid white; /* Witte rand rondom de pagina */
+            background-image: url(pionbord.png);
+        }
+        header, footer {
+            background-color: #2ac22a; /* Contrasterend paars */
+            color: white;
+            border: 5px solid white; /* Witte rand rondom secties */
+            padding: 20px;
+        }
+        .book-preview img {
+            width: 250px;
+            height: 350px;
+            border: 5px solid white; /* Witte rand rond de afbeelding */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionele schaduw voor diepte */
+        }
+    </style>
+</head>
+<body>
+  <button class="turbo-button" onclick="activateTurbo()">Turbo Mode</button>
+  <script>
+    function enterSite() {
+      console.log('Welkom Headmaster! Headmaster in session');
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+      window.location.href = 'mpcnetworkshop.html';
+    }
+  </script>
+
+    <style>
+  body {font-family: 'Cinzel', serif; }
+  .wall { display: flex; flex-wrap: wrap; gap: 20px; padding: 40px; justify-content: center; }
+  .artefact {
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #444, #111);
+    border: 2px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: static;
+  }
+  .artefact:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px #6ff;
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .artefact:hover .tooltip { opacity: 1; }
+  .artefact2 {
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #444, #111);
+    border: 2px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: static;
+  }
+  .artefact2:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px #6ff;
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .artefact2:hover .tooltip { opacity: 1; }
+  .artefact3 {
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #444, #111);
+    border: 2px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: static;
+  }
+  .artefact3:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px #6ff;
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .artefact3:hover .tooltip { opacity: 1; }
+    .artefact4 {
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #444, #111);
+    border: 2px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: static;
+  }
+  .artefact4:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px #6ff;
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .artefact4:hover .tooltip { opacity: 1; }
+</style>
+<!--
+  .artefact3 {
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #444, #111);
+    border: 2px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #222;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: static;
+  }
+  .artefact3:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px #6ff;
+  }
+  .tooltip {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .artefact3:hover .tooltip { opacity: 1; }
+-->
+
+<!--
+  <div class="artefact">
+    <div class="tooltip">Runesteen van Veyra</div>
+  </div>
+  <div class="artefact">
+    <div class="tooltip">Masker van de Stilte</div>
+  </div>
+  <div class="artefact">
+    <div class="tooltip">Fragment van Morgana</div>
+  </div>
+-->
+
+<!--
+  .artefact {
+    background-image: url('ashra.png');
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+
+  .artefact:hover {
+    box-shadow: 0 0 12px #0ff;
+  }
+-->
+
+  <script src="script.js"></script>
+  <style>
+  .artefact {
+    background-image: url('ashra.png');
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+
+  .artefact:hover {
+    box-shadow: 0 0 12px #0ff;
+  }
+
+  .artefact2 {
+    background-image: url('sefabubbels.png');
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+
+  .artefact2:hover {
+    box-shadow: 0 0 12px #0ff;
+  }
+
+    .artefact3 {
+    background-image: url('Lena.png');
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+
+  .artefact3:hover {
+    box-shadow: 0 0 12px #0ff;
+  }
+
+    .artefact4 {
+    background-image: url('teacher.png');
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+
+  .artefact4:hover {
+    box-shadow: 0 0 12px #0ff;
+  }
+
+  .tooltip {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+  }
+</style>
+
+<div class="artefact" style="left: 50px; top: 80px;">
+  <div class="tooltip">Runesteen van Ashra</div>
+</div>
+<div class="artefact2" style="left: 200px; top: 180px;">
+  <div class="tooltip">Medaillon van Sefa bubbels</div>
+</div>
+<div class="artefact3" style="left: 350px; top: 280px;">
+  <div class="tooltip">Fragment van Morgana</div>
+</div>
+  <div class="artefact4">
+    <div class="tooltip">Boekenkar van kennis</div>
+  </div>
+
+<script>
+  document.querySelectorAll('.artefact').forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.cursor = 'grab';
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.artefact2').forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.cursor = 'grab';
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.artefact3').forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.cursor = 'grab';
+    });
+  });
+</script>
+
+<!--
+<script>
+  document.querySelectorAll('.artefact3').forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.cursor = 'grab';
+    });
+  });
+</script>
+-->
+<script>
+  document.querySelectorAll('.artefact4').forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.cursor = 'grab';
+    });
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

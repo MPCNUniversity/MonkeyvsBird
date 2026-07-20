@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body class="bg-primary-translucent">
+
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+        <div class="container-fluid">
+          <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+
+          </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+     
+
+<section class="container py-4" id="ex-m1">
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-success text-white">
+        Hoofdstuk 17: Todo App Mini-Project
+    </div>
+    <div class="card-body">
+
+        <form id="todo_form2" class="mb-3">
+            <input id="todo_input2" class="form-control mb-2" placeholder="Nieuwe taak">
+            <button class="btn btn-success w-100">Voeg toe</button>
+        </form>
+
+        <div id="todo_msg2" class="alert alert-secondary mb-3">
+            Voeg een taak toe om te beginnen
+        </div>
+
+        <ul id="todo_list2" class="list-group"></ul>
+    </div>
+</div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening p73 — hover click effecten</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>
+<br>    // pagina 73 taak toevoegen en verwijderen uit lijst
+<br>    //eigen js
+<br>    const taken2 = [];
+<br>    
+<br>    function renderTodos() {
+<br>        const list = document.getElementById("todo_list2");
+<br>    
+<br>        list.innerHTML = taken2
+<br>            .map((task, index) => `
+<br>          < li class="list-group-item d-flex justify-content-between align-items-center ${task.done ? "todo-done" : ""}">
+<br>            < span class="todo-text" data-idx="${index}">
+<br>               ${task.text}
+<br>            < /span>
+<br>            < button class="btn btn-sm btn-danger todo-del" data-idx="${index}">X</button>
+<br>          < /li>
+<br>        `)
+<br>            .join("");
+<br>    }
+<br>    
+<br>    function addTodo(e) {
+<br>        e.preventDefault();
+<br>    
+<br>        const inp = document.getElementById("todo_input2");
+<br>        const msg = document.getElementById("todo_msg2");
+<br>        const text = inp.value.trim();
+<br>    
+<br>        if (!text) {
+<br>            msg.className = "alert alert-danger mb-3";
+<br>            msg.textContent = "❌ Vul een taak in";
+<br>            return;
+<br>        }
+<br>    
+<br>        taken2.push({ text, done: false });
+<br>    
+<br>        msg.className = "alert alert-success mb-3";
+<br>        msg.textContent =  `Taak toegevoegd: ${text}`;
+<br>    
+<br>        inp.value = "";
+<br>        renderTodos();
+<br>    }
+<br>    
+<br>    function handleTodoClick(e) {
+<br>        const idx = e.target.dataset.idx;
+<br>    
+<br>        // Toggle done
+<br>        if (e.target.classList.contains("todo-text")) {
+<br>            taken2[idx].done = !taken2[idx].done;
+<br>            renderTodos();
+<br>            return;
+<br>        }
+<br>    
+<br>        // Delete
+<br>        if (e.target.classList.contains("todo-del")) {
+<br>            taken2.splice(idx, 1);
+<br>            renderTodos();
+<br>        }
+<br>    }
+<br>    
+<br>    document.addEventListener("DOMContentLoaded", () => {
+<br>        document.getElementById("todo_form2")?.addEventListener("submit", addTodo);
+<br>        document.getElementById("todo_list2")?.addEventListener("click", handleTodoClick);
+<br>    });
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptp77.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 27</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork magical pattern grid</title>
+    <meta author="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <script type="module" src="./js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/deskoff.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+<div class="container">
+<div class="row d-flex">
+
+
+
+<div class="bg-5 justify-content-between">
+                                   <div id="gallery">  <canvas id="patternCanvas"></canvas>   </div>
+
+
+
+    
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+<script>
+  fetch('https://hp-api.onrender.com/api/characters')
+    .then(res => res.json())
+    .then(data => {
+      const gallery = document.getElementById('gallery');
+      data.slice(0, 5).forEach(char => {
+        const card = document.createElement('div');
+        card.innerHTML = `<div class="col-sm-12">
+<img src="${char.image}" alt="${char.name}"><p>${char.name}</p><p>${char.house}<br>&nbsp;</p></div>
+`;
+        gallery.appendChild(card);
+      });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const canvas = document.getElementById('patternCanvas');
+  const ctx = canvas.getContext('2d');
+  let width, height, scale = 1, offsetX = 0, offsetY = 0;
+
+  const items = Array.from({ length: 1000 }, (_, i) => ({
+    id: i,
+    color: `hsl(${i * 137.5 % 360}, 70%, 60%)`,
+    size: 5 + (i % 10),
+    angle: i * 0.1
+  }));
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.save();
+    ctx.translate(width / 2 + offsetX, height / 2 + offsetY);
+    ctx.scale(scale, scale);
+
+    items.forEach(item => {
+      const r = 100 + item.id * 0.5;
+      const angle = item.angle;
+      const x = r * Math.cos(angle);
+      const y = r * Math.sin(angle);
+
+      ctx.beginPath();
+      ctx.arc(x, y, item.size, 0, Math.PI * 2);
+      ctx.fillStyle = item.color;
+      ctx.fill();
+    });
+
+    ctx.restore();
+  }
+
+  // Zoom and pan
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const zoom = e.deltaY < 0 ? 1.1 : 0.9;
+    scale *= zoom;
+    draw();
+  });
+
+  let isDragging = false, lastX, lastY;
+  canvas.addEventListener('mousedown', e => {
+    isDragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+  canvas.addEventListener('mousemove', e => {
+    if (isDragging) {
+      offsetX += e.clientX - lastX;
+      offsetY += e.clientY - lastY;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      draw();
+    }
+  });
+  canvas.addEventListener('mouseup', () => isDragging = false);
+  canvas.addEventListener('mouseleave', () => isDragging = false);
+
+  window.addEventListener('resize', resize);
+  resize();
+</script>
+</body>
+</html>

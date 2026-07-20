@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body class="bg-primary-translucent">
+
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+        <div class="container-fluid">
+          <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+
+          </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+     
+
+<section class="container py-4" id="ex-m1">
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-dark text-white">Favorietenlijst</div>
+    <div class="card-body">
+
+        <input id="fav_input" class="form-control mb-2" placeholder="Voeg favoriet toe">
+        <button id="fav_btn" class="btn btn-dark w-100 mb-3">Toevoegen</button>
+
+        <ul id="fav_list" class="list-group mb-2"></ul>
+
+        <button id="fav_clear" class="btn btn-outline-danger w-100">Wissen</button>
+
+    </div>
+</div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening p 100 — local storage</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>
+<br>    // pagina 100 local storage
+<br>    let favs = [];
+<br>    
+<br>    function saveFavs() {
+<br>        localStorage.setItem("favs", JSON.stringify(favs));
+<br>    }
+<br>    
+<br>    function loadFavs() {
+<br>        const saved = JSON.parse(localStorage.getItem("favs"));
+<br>        if (saved) favs = saved;
+<br>        renderFavs();
+<br>    }
+<br>    
+<br>    function renderFavs() {
+<br>        document.getElementById("fav_list").innerHTML =
+<br>            favs.map(f => `<li class="list-group-item">${f}</li>`).join("");
+<br>    }
+<br>    
+<br>    function addFav() {
+<br>        const val = document.getElementById("fav_input").value.trim();
+<br>        if (!val) return;
+<br>    
+<br>        favs.push(val);
+<br>        saveFavs();
+<br>        renderFavs();
+<br>        document.getElementById("fav_input").value = "";
+<br>    }
+<br>    
+<br>    function clearFavs() {
+<br>        favs = [];
+<br>        localStorage.removeItem("favs");
+<br>        renderFavs();
+<br>    }
+<br>    
+<br>    document.addEventListener("DOMContentLoaded", () => {
+<br>        loadFavs();
+<br>        document.getElementById("fav_btn")?.addEventListener("click", addFav);
+<br>        document.getElementById("fav_clear")?.addEventListener("click", clearFavs);
+<br>    });
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptp104.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 37</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

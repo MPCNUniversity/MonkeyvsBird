@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+
+            <section class="container py-4" id="h3-formatter-station">
+                <h3 class="text-white">H3 – Formatter Station</h3>
+
+                <!-- Input Group -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="fs_label">Tekst</span>
+                    <input
+                            id="fs_text"
+                            type="text"
+                            class="form-control"
+                            placeholder="Typ hier..."
+                            aria-describedby="fs_label"
+                    >
+                </div>
+
+                <!-- Button Group -->
+                <div class="btn-group mb-3" role="group" aria-label="Formatter acties">
+                    <button id="fs_upper" type="button" class="btn btn-outline-dark">toUpperCase()</button>
+                    <button id="fs_lower" type="button" class="btn btn-outline-dark">toLowerCase()</button>
+                    <button id="fs_cap"  type="button" class="btn btn-outline-dark">Capitalize()</button>
+                </div>
+
+                <!-- List Group: max 5 resultaten -->
+                <ul id="fs_results" class="list-group"></ul>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H3 — formatter station</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Hoofdstuk 3: Function Scoping
+<br>                                    // Oefening H3-A — Formatter Station
+<br>                                    // ------------------------------
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>
+<br>                                    const inp   = document.getElementById('fs_text');
+<br>                                    const btnUp = document.getElementById('fs_upper');
+<br>                                    const btnLo = document.getElementById('fs_lower');
+<br>                                    const btnCa = document.getElementById('fs_cap');
+<br>                                    const list  = document.getElementById('fs_results');
+<br>
+<br>                                    // Pure: Capitalize
+<br>                                    function capitalize(str) {
+<br>                                    const t = str.trim();
+<br>                                    if (t === '') return '';
+<br>                                    const first = t.charAt(0).toUpperCase();    // eerste letter groot
+<br>                                    const rest  = t.slice(1).toLowerCase();     // rest kleine letters
+<br>                                    return first + rest;
+<br>                                    }
+<br>
+<br>                                    // UI helper: voeg item toe (max 5)
+<br>                                    function prependItem(text) {
+<br>                                    if (text.trim() === '') return;
+<br>
+<br>                                    list.innerHTML =
+<br>                                    `<li class="list-group-item">${text}</li>` + list.innerHTML;
+<br>
+<br>                                    while (list.children.length > 5) {
+<br>                                    list.removeChild(list.lastElementChild);
+<br>                                    }
+<br>                                    }
+<br>
+<br>                                    // Click handlers
+<br>                                    btnUp.addEventListener('click', () => {
+<br>                                    const v = inp.value;
+<br>                                    if (v.trim() === '') return;
+<br>                                    prependItem(v.toUpperCase());
+<br>                                    });
+<br>
+<br>                                    btnLo.addEventListener('click', () => {
+<br>                                    const v = inp.value;
+<br>                                    if (v.trim() === '') return;
+<br>                                    prependItem(v.toLowerCase());
+<br>                                    });
+<br>
+<br>                                    btnCa.addEventListener('click', () => {
+<br>                                    const v = inp.value;
+<br>                                    const c = capitalize(v);
+<br>                                    if (c === '') return;
+<br>                                    prependItem(c);
+<br>                                    });
+<br>
+<br>                                    });
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth3b.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H3b</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

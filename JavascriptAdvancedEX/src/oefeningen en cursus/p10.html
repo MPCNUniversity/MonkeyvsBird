@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>oefening pagina 10</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="MPCNetwork">
+    <meta name="description" content="javascript beginner oefening">
+    <meta name="keywords" content="HTML, tutorial, beginner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="bg-primary-translucent">
+      <!-- bg sets primary image   translucent makes the non image part see through   setting the background through style will override this.
+                                    leaving the deskbottom-->
+   <button popovertarget="menu"style="color: rgb(224 141 45/ 0.973)" class="btn btn-primary rounded-2">
+      <h1> MPCNetwork</h1>   </button>
+            <!-- MPCNUniversity 
+                        popover  button with popovertarget="menu" | div with id="menu" href attributes under that 
+   -->            <div id="menu" class="rounded-2" popover>
+            <a href="#"><i class="bx bx-hot" style="color: rgba(224 141 45/ 0.973)">presents</i></a>
+            <a href="#"><i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i></a>
+            <a href="#"><i class="bx bx-hot" style="color: rgba(224 141 45/ 0.973)">Welkom and thank you</i></a>
+                  </div>
+<br>
+      <section class="py-4" id="ex-m1">
+            <div class="row py-4">
+                  <h1 class="h4 mb-3">Vite + Bootstrap werkt</h1>
+                        <div class="card shadow-sm">
+                              <div class="card-header bg-primary text-white">
+                                    Test
+                              </div>
+                              <div class="card-body">
+                                    <p class="mb-3">Klik op de knop om te testen of alles goed geladen is.</p>
+                                    <button id="btnTest" class="btn btn-primary">Test template</button>
+                                    <div id="out" class="alert alert-secondary mt-3 mb-0">
+                                          Output verschijnt hier
+                                    </div>      
+                                    <div class="card shadow-sm mt-4">
+                                          <div class="card-header bg-dark text-white">
+                                                Naam test
+                                          </div>
+                                          <div class="card-body">
+                                                <input id="inpName" class="form-control mb-2" placeholder="Geef je naam in"/>
+                                                <div id="btnName" class="btn btn-dark w-100">Toon naam</div>
+                                                <div id="nameOut" class="alert alert-secondary mt-3 mb-0">Nog niets ingegeven</div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+            </div>
+      </section>
+
+
+ <i class="bx bxl-facebook-square offset-10" style="color: floralwhite"></i>
+</body>
+</html>

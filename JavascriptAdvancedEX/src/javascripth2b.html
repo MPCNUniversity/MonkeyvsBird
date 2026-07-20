@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+
+            <section class="container py-4" id="h2-shadowing">
+                <h3 class="text-white">H2b – Variable Shadowing</h3>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Basiswaarde</span>
+                    <input id="sh_base" type="number" class="form-control" placeholder="bv.10">
+                    <button id="sh_run" class="btn btn-outline-dark">Run</button>
+                </div>
+                <ul id="sh_out" class="list-group"></ul>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H2b — scope lab</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // h2b
+<br>                                    document.addEventListener("DOMContentLoaded", () => {
+<br>
+<br>                                    const inpBase = document.getElementById("sh_base");
+<br>                                    const btnRun  = document.getElementById("sh_run");
+<br>                                    const outList = document.getElementById("sh_out");
+<br>
+<br>                                    // Pure functie: geeft array van strings terug
+<br>                                    function shadowInfo(base) {
+<br>                                    let x = base;               // buiten block
+<br>
+<br>                                    {
+<br>                                    let x = base + 5;         // shadow: nieuwe x
+<br>                                    return [
+<br>                                    `buiten block: x = ${base}`,
+<br>                                    `binnen block: x = ${x}`,
+<br>                                    `na block: x = ${base}`
+<br>                                    ];
+<br>                                    }
+<br>                                    }
+<br>
+<br>                                    // Impure: UI
+<br>                                    function handleShadow() {
+<br>                                    const raw = inpBase.value.trim();
+<br>                                    const base = raw === '' ? 10 : Number(raw);
+<br>
+<br>                                    const items = shadowInfo(base);
+<br>
+<br>                                    let html = "";
+<br>                                    for (let i = 0; i < items.length; i++) {
+<br>                                    html += `<li class="list-group-item">${items[i]}</li>`;
+<br>                                    }
+<br>                                    outList.innerHTML = html; // overschrijven
+<br>                                    }
+<br>
+<br>                                    btnRun.addEventListener("click", handleShadow);
+<br>                                    });
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth3.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H3</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

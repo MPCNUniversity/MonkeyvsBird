@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="h6-tags-manager">
+                <h3 class="text-white">H6 – Tags Manager</h3>
+
+                <!-- Input + Add -->
+                <div class="input-group mb-3">
+                    <input id="tm_input" class="form-control" placeholder="Nieuwe tag">
+                    <button id="tm_add" class="btn btn-primary">Toevoegen</button>
+                </div>
+
+                <!-- Controls -->
+                <div class="btn-group mb-3" role="group" aria-label="Tag acties">
+                    <button id="tm_sort" class="btn btn-outline-success">Sorteer A–Z</button
+                    >
+                    <button id="tm_rev" class="btn btn-outline-warning">Reverse</button>
+                    <button id="tm_clear" class="btn btn-outline-danger">Leegmaken</button>
+                </div>
+
+                <!-- List -->
+                <ul id="tm_list" class="list-group mb-3">
+                    <!-- Dynamisch: <li class="list-group-item d-flex justify-content-between
+                align-items-center">
+                         <span>tagnaam</span>
+                         <span class="badge text-bg-secondary rounded-pill">0</span>
+                       </li> -->
+                </ul>
+
+                <!-- Stats -->
+                <div class="card">
+                    <div class="card-body p-0">
+                        <table class="table mb-0">
+
+                            <tbody>
+                            <tr>
+                                <th scope="row" style="width: 40%;">Totaal aantal</th>
+                                <td><span id="tm_count">0</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Unieke tags</th>
+                                <td><span id="tm_unique">0</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H6 — tags manager</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // oefening h6
+<br>                                    // ----------------------------------
+<br>                                    // Hoofdstuk 6: Arrow Functions (=>)
+<br>                                    // Oefening H6-A — Tags Manager
+<br>                                    // ----------------------------------
+<br>                                    // | Begrip          | Betekenis                                           |
+<br>                                    // | --------------- | --------------------------------------------------- |
+<br>                                    // | `array`         | lijst met waarden                                   |
+<br>                                    // | `trim()`        | spaties rond tekst verwijderen                      |
+<br>                                    // | `toLowerCase()` | alles kleine letters (handig voor vergelijken)      |
+<br>                                    // | `some()`        | checkt of een lijst een match bevat                 |
+<br>                                    // | `map()`         | maakt een nieuwe lijst door elke waarde te bewerken |
+<br>                                    // | `join("")`      | plakt lijst weer samen in één string                |
+<br>                                    // | `sort()`        | alfabetisch sorteren                                |
+<br>                                    // | `reverse()`     | lijst omkeren                                       |
+<br>                                    // | `Set()`         | verzameling met alleen unieke waarden               |
+<br>
+<br>
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>
+<br>                                    // We halen alle HTML-elementen op zodat we er later mee kunnen werken.
+<br>                                    // Dit doet niets "slims": we steken alleen verwijzingen naar elementen in variabelen.
+<br>                                    const inp     = document.getElementById('tm_input');
+<br>                                    const btnAdd  = document.getElementById('tm_add');
+<br>                                    const btnSort = document.getElementById('tm_sort');
+<br>                                    const btnRev  = document.getElementById('tm_rev');
+<br>                                    const btnClr  = document.getElementById('tm_clear');
+<br>
+<br>                                    const list    = document.getElementById('tm_list');
+<br>                                    const elCount = document.getElementById('tm_count');
+<br>                                    const elUniq  = document.getElementById('tm_unique');
+<br>
+<br>                                    // Hier bewaren we al onze tags in een array (lijst).
+<br>                                    // Een array is een verzameling waarden in volgorde, bv: ["JS", "HTML", "CSS"]
+<br>                                    let tags = [];
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // Kleine hulpfuncties (arrow functions)
+<br>                                    // -------------------------------------------------------
+<br>
+<br>                                    // trim() verwijdert spaties voor en na een tekst:
+<br>                                    // "  hallo  " → "hallo"
+<br>                                    const clean = v => v.trim();
+<br>
+<br>                                    // toLowerCase() maakt tekst altijd kleine letters:
+<br>                                    // "JS" → "js"
+<br>                                    // Dit gebruiken we om "JS" en "js" als dezelfde tag te zien (case-insensitive)
+<br>                                    const lower = v => v.toLowerCase();
+<br>
+<br>                                    // some() kijkt of er minstens één element in de array voldoet aan een test
+<br>                                    // bv: ["hi","yo"].some(w => w==="yo") → true
+<br>                                    //
+<br>                                    // Hier gebruiken we het om te checken of een tag al bestaat.
+<br>                                    const isDuplicate = (arr, value) => {
+<br>                                    const val = lower(value);
+<br>                                    return arr.some(t => lower(t) === val);
+<br>                                    };
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // RENDER: bouw de volledige UI opnieuw op
+<br>                                    // -------------------------------------------------------
+<br>                                    const render = () => {
+<br>                                    // map() gaat door elke waarde van de array en geeft een nieuwe array terug
+<br>                                    // Hier bouwen we HTML-regels voor elke tag
+<br>                                    //
+<br>                                    // daarna gebruiken we join("") om de array van HTML-stukjes samen te voegen tot 1 string
+<br>                                    list.innerHTML = tags
+<br>                                    .map((t, i) =>
+<br>                                    `< li class="list-group-item d-flex justify-content-between align-items-center">
+<br>                                    < span>${t}< /span>
+<br>                                    < span class="badge text-bg-secondary rounded-pill">${i}< /span>
+<br>                                < /li>`
+<br>                                    )
+<br>                                    .join(""); // join("") plakt alles aan elkaar zonder komma's
+<br>
+<br>                                    // lengte van array = totaal aantal tags
+<br>                                    elCount.textContent = `${tags.length}`;
+<br>
+<br>                                    // new Set() maakt een unieke verzameling
+<br>                                    // ["JS","js","JS"] → Set(["js"])
+<br>                                    // daarna meten we hoe groot die Set is (unieke woorden)
+<br>                                    const uniqCount = new Set(tags.map(lower)).size;
+<br>                                    elUniq.textContent = `${uniqCount}`;
+<br>                                    };
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // Toevoegen van nieuwe tag
+<br>                                    // -------------------------------------------------------
+<br>                                    btnAdd.addEventListener('click', () => {
+<br>                                    const val = clean(inp.value);
+<br>
+<br>                                    // niets ingevuld → stop
+<br>                                    if (!val) return;
+<br>
+<br>                                    // als de tag al bestaat → stop
+<br>                                    if (isDuplicate(tags, val)) return;
+<br>
+<br>                                    // voegen tag toe aan array
+<br>                                    tags.push(val);
+<br>
+<br>                                    // inputveld leegmaken
+<br>                                    inp.value = "";
+<br>
+<br>                                    // UI vernieuwen
+<br>                                    render();
+<br>                                    });
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // Sorteren van A → Z
+<br>                                    // -------------------------------------------------------
+<br>                                    // sort() sorteert alfabetisch
+<br>                                    // localeCompare() vergelijkt twee woorden correct (ook met accenten)
+<br>                                    btnSort.addEventListener('click', () => {
+<br>                                    tags.sort((a, b) => lower(a).localeCompare(lower(b)));
+<br>                                    render();
+<br>                                    });
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // Omgekeerde volgorde
+<br>                                    // -------------------------------------------------------
+<br>                                    // reverse() keert de hele array om
+<br>                                    btnRev.addEventListener('click', () => {
+<br>                                    tags.reverse();
+<br>                                    render();
+<br>                                    });
+<br>
+<br>                                    // -------------------------------------------------------
+<br>                                    // Alles leegmaken
+<br>                                    // -------------------------------------------------------
+<br>                                    btnClr.addEventListener('click', () => {
+<br>                                    tags = []; // Array leegmaken
+<br>                                    render();
+<br>                                    });
+<br>
+<br>                                    // Eerste keer tekenen bij pagina-start
+<br>                                    //render();
+<br>                                    //document.write("tester");
+<br>                                    });
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth6b.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H6b</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

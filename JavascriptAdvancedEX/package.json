@@ -1,0 +1,26 @@
+{
+  "name": "p29",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "eleventy": "eleventy",
+    "build:eleventy": "eleventy --input=src --output=_site",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.93.2",
+    "vite": "^7.1.12",
+    "@11ty/eleventy": "^1.0.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  }
+}

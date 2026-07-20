@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>mpcnu - 0.13</title>
+    <link rel="stylesheet" href="css/mpcndesk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<!--
+-->
+
+<body>
+
+<div class="container">
+  <div class="top-right">
+    <h1 class="title2">About - Friedel Majoor</h1>
+    <button class="enter-button" onclick="enterSite()">Check me out!</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="top-left">
+    <h2 class="title">HeadmasterIX</h2>
+    <button class="enter-button" onclick="enterSite1()">Enlist</button>
+  </div>
+</div>
+
+<!--
+Begin van de iFrames
+-->
+
+<div class="bottom-left">
+    <h3 class="title3">Ongoing Projects</h3>
+    <button class="enter-button" onclick="enterSite2()">♫♪♫☺♥</button>
+    <iframe
+    id="fr"
+    name="myFrame"
+    width="550"
+    height="800"
+    src="http://127.0.0.1:8000/hexanexusForrest/desks/hn_map32.html"
+    allow="">
+    </iframe>
+</div>
+
+
+<div class="bottom-right">
+    <h3 class="title3">Music and relaxation</h3>
+    <button class="enter-button" onclick="enterSite2()">♫♪♫☺♥</button>
+    <iframe
+    id="fr"
+    name="myFrame"
+    width="550"
+    height="800"
+    src="http://127.0.0.1:8000/hexanexusForrest/desks/hn_map32.html"
+    allow="">
+    </iframe>
+</div>
+
+<!--
+Muziek ♫♪♫♪♪♫☺4☺♪♪♫♫♪
+-->
+<audio id="mijnMuziek" src="audio/audio1.mp3"></audio>
+
+<div class="container2">
+  <div class="bottom-left">
+    <h2 class="title2">Professional Skills</h2>
+    <button class="enter-button" onclick="enterSite3()">Portfolio</button>
+    <button class="enter-button" onclick="enterSite4()">Projects</button>
+    <button class="enter-button" onclick="enterSite5()">Price</button>
+  </div>
+</div>
+
+  <button class="turbo-button" onclick="activateTurbo()">Turbo Mode</button>
+
+
+
+  <script>
+    function enterSite() {
+      console.log(`MPCNetwork - Network active`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'mpcnu.html';
+    }
+  </script>
+
+  <script>
+    function enterSite1() {
+      console.log(`MPCNetwork University - Class in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'projects/HeadmasterIX/HeadmasterIX.html';
+    }
+  </script>
+
+  <script>
+    function enterSite2() {
+      console.log(`MPCNetwork HeadmasterIX - Headmaster in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    //window.location.href = 'hexanexusForrest/dinotopia.html';
+      const audio = document.getElementById("mijnMuziek");
+      audio.play();
+        window.open("hexanexusForrest/dinotopia.html", "_blank", "width=800,height=600");
+    }
+  </script>  
+
+  <script>
+    function enterSite3() {
+      console.log(`MPCNetwork HeadmasterIX - Headmaster in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'hexanexusForrest/hn_map.html';
+    }
+  </script>
+
+    <script>
+    function enterSite4() {
+      console.log(`MPCNetwork HeadmasterIX - Headmaster in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'hexanexusForrest/hn_map2.html';
+    }
+  </script>
+
+    <script>
+    function enterSite5() {
+      console.log(`MPCNetwork HeadmasterIX - Headmaster in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'hexanexusForrest/hn_map3.html';
+    }
+  </script>
+
+  <div class="artefact" style="left: 350px; top: 350px;"></div>
+  <div class="tooltip" style="color: aliceblue;">MPCNetwork - Home</div>
+
+<script src="js/mpcndesk.js"></script>
+<script src="js/buttonmove.js"></script>
+
+</body>
+</html>

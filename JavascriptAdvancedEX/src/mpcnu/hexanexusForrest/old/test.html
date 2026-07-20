@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="laptoptransport.css"></script>
+    <script src="laptoptransport.js"></script>
+    <title>Document</title>
+    
+</head>
+<body style=".screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.next-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.transition-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.8) 0%, rgba(0, 123, 255, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+  transition: width 0.6s ease, height 0.6s ease;
+}">
+
+<h1>Laptoptransport<h1>
+const button = document.querySelector('.transition-button');
+const overlay = document.querySelector('.transition-overlay');
+const currentScreen = document.querySelector('.current-screen');
+const nextScreen = document.querySelector('.next-screen');
+
+button.addEventListener('click', (e) => {
+  const rect = e.target.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  overlay.style.left = `${centerX}px`;
+  overlay.style.top = `${centerY}px`;
+  overlay.style.width = '0px';
+  overlay.style.height = '0px';
+
+  // Start de animatie
+  requestAnimationFrame(() => {
+    overlay.style.width = '200vw';
+    overlay.style.height = '200vh';
+  });
+
+  // Na de animatie: wissel van scherm
+  setTimeout(() => {
+    currentScreen.style.opacity = 0;
+    nextScreen.style.opacity = 1;
+    nextScreen.style.pointerEvents = 'auto';
+  }, 600);
+});
+<div class="screen current-screen">
+  <button class="transition-button">Ga naar volgende</button>
+</div>
+
+<div class="screen next-screen">
+  <!-- Inhoud van het volgende scherm -->
+</div>
+
+<div class="transition-overlay"></div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+  
+  body {
+    color: aqua;
+  }
+  
+  .title {top: 20px; color: black; position: relative;   }
+
+
+
+
+  div {
+    width: 600px;
+    height: 600  px;
+    border: 1px solid grey;
+    margin: 50px auto;
+    background-color: brown;
+    background-image: url(../im/mpc.png);
+  }

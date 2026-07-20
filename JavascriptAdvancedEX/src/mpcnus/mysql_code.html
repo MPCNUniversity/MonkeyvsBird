@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPCNUniversity - MySQL programmeren</title>
+    <script src="css/mpcnu11.css"></script>
+</head>
+<!--
+Dit is de officiële website van MPCNUniversity-Javascript Basis
+Dank gaat uit naar de originele auteur van deze opleiding : mr. Tom Vanhoutte
+Zonder wiens deskundige uitleg deze site niet mogelijk zou zijn geweest!
+Dank u Tom Vanhoutte.
+Dank gaat ook uit naar de maker van deze pagina's : mr. Friedel Majoor
+Zonder wiens input deze site niet zou bestaan.
+Dank u Friedel Majoor.
+
+Aan alle studenten! Welkom & Happy coding
+-->
+<body  style="background-color: antiquewhite; cursor: url('im/pen.png') 10 10, auto;" >
+    <h1 class="titel">MySQL programmeren</h1>
+    <h3>Veelgebruikte datatypes in MySQL</h3>
+<p>
+Bij het aanmaken van tabellen is het belangrijk om het juiste datatype te kiezen voor elke kolom. Hieronder vind je een overzicht van de meest gebruikte datatypes, inclusief hun bereik en typische toepassingen.
+</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Bereik (Signed)</th>
+      <th>Bereik (Unsigned)</th>
+      <th>Toepassing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TINYINT</td>
+      <td>-128 tot 127</td>
+      <td>0 tot 255</td>
+      <td>Kleine statuswaarden (bv. ja/nee, true/false)</td>
+    </tr>
+    <tr>
+      <td>SMALLINT</td>
+      <td>-32.768 tot 32.767</td>
+      <td>0 tot 65.535</td>
+      <td>Leeftijd, aantal producten, scores</td>
+    </tr>
+    <tr>
+      <td>MEDIUMINT</td>
+      <td>-8.388.608 tot 8.388.607</td>
+      <td>0 tot 16.777.215</td>
+      <td>Unieke ID’s voor middelgrote datasets</td>
+    </tr>
+    <tr>
+      <td>INT / INTEGER</td>
+      <td>-2.147.483.648 tot 2.147.483.647</td>
+      <td>0 tot 4.294.967.295</td>
+      <td>Primaire sleutels, grote tellers</td>
+    </tr>
+    <tr>
+      <td>BIGINT</td>
+      <td>-9.22×10¹⁸ tot 9.22×10¹⁸</td>
+      <td>0 tot 1.84×10¹⁹</td>
+      <td>Financiële data, grote datasets</td>
+    </tr>
+    <tr>
+      <td>DECIMAL(x,y)</td>
+      <td>Afhankelijk van x en y</td>
+      <td>Afhankelijk van x en y</td>
+      <td>Exacte decimale waarden (bv. prijzen)</td>
+    </tr>
+    <tr>
+      <td>FLOAT</td>
+      <td>±3.4E-38 tot ±3.4E+38</td>
+      <td>±1.18E-38 tot ±3.4E+38</td>
+      <td>Benaderde decimale waarden</td>
+    </tr>
+    <tr>
+      <td>DOUBLE</td>
+      <td>±2.2E-308 tot ±1.8E+308</td>
+      <td>±2.2E-308 tot ±1.8E+308</td>
+      <td>Wetenschappelijke berekeningen</td>
+    </tr>
+    <tr>
+      <td>CHAR(n)</td>
+      <td>Vaste lengte: 0–255 tekens</td>
+      <td>—</td>
+      <td>Vaste codes, landafkortingen</td>
+    </tr>
+    <tr>
+      <td>VARCHAR(n)</td>
+      <td>Variabele lengte: 0–65.535 tekens (afhankelijk van charset)</td>
+      <td>—</td>
+      <td>Namen, e-mails, adressen</td>
+    </tr>
+    <tr>
+      <td>TEXT</td>
+      <td>Tot 65.535 tekens</td>
+      <td>—</td>
+      <td>Beschrijving, opmerkingen</td>
+    </tr>
+    <tr>
+      <td>DATE</td>
+      <td>1000-01-01 tot 9999-12-31</td>
+      <td>—</td>
+      <td>Geboortedatum, registratiedatum</td>
+    </tr>
+    <tr>
+      <td>DATETIME</td>
+      <td>1000-01-01 00:00:00 tot 9999-12-31 23:59:59</td>
+      <td>—</td>
+      <td>Tijdstempels, logboeken</td>
+    </tr>
+    <tr>
+      <td>BOOLEAN / BOOL</td>
+      <td>0 (false) of 1 (true)</td>
+      <td>—</td>
+      <td>Statusvelden, vinkjes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Tips bij datatypekeuze</h4>
+<ul>
+  <li>Kies het kleinste datatype dat je nodig hebt voor efficiëntie.</li>
+  <li>Gebruik <code>UNSIGNED</code> als negatieve waarden niet nodig zijn.</li>
+  <li>Gebruik <code>DECIMAL</code> voor geldbedragen, niet <code>FLOAT</code>.</li>
+  <li>Gebruik <code>VARCHAR</code> in plaats van <code>TEXT</code> als je wilt sorteren of indexeren.</li>
+</ul>
+
+<h2>MySQL Functies en Aggregatie</h2>
+
+<h3>Alias met AS</h3>
+<p>
+Het keyword <code>AS</code> wordt gebruikt om een veld een alternatieve naam te geven in de uitvoer. Dit heet een <strong>alias</strong>. Bijvoorbeeld:
+</p>
+<pre><code>SELECT title AS film_titel FROM film;</code></pre>
+
+<h3>Veelgebruikte functies</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Functie</th>
+      <th>Beschrijving</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>COUNT()</td><td>Telt het aantal rijen in een tabel.</td></tr>
+    <tr><td>MAX()</td><td>Geeft de hoogste waarde in een kolom.</td></tr>
+    <tr><td>MIN()</td><td>Geeft de laagste waarde in een kolom.</td></tr>
+    <tr><td>AVG()</td><td>Geeft het gemiddelde van een kolom.</td></tr>
+    <tr><td>SUM()</td><td>Geeft de som van een numerieke kolom.</td></tr>
+    <tr><td>SQRT()</td><td>Geeft de vierkantswortel van een getal.</td></tr>
+    <tr><td>RAND()</td><td>Genereert een willekeurig getal.</td></tr>
+    <tr><td>CONCAT()</td><td>Voegt strings samen.</td></tr>
+    <tr><td>LENGTH()</td><td>Geeft de lengte van een string.</td></tr>
+    <tr><td>CURDATE()</td><td>Geeft de huidige datum.</td></tr>
+    <tr><td>CURTIME()</td><td>Geeft de huidige tijd.</td></tr>
+    <tr><td>ADDDATE()</td><td>Voegt dagen toe aan een datum.</td></tr>
+    <tr><td>ADDTIME()</td><td>Voegt tijd toe aan een tijdstip.</td></tr>
+    <tr><td>DATEFORMAT()</td><td>Wijzigt de weergave van een datum.</td></tr>
+    <tr><td>DATE_SUB()</td><td>Trekt een datum van een andere af.</td></tr>
+    <tr><td>DATE()</td><td>Geeft enkel de datumcomponent terug.</td></tr>
+    <tr><td>WEEKDAY()</td><td>Geeft het weekdagnummer (0 = maandag).</td></tr>
+    <tr><td>WEEK()</td><td>Geeft het weeknummer van het jaar.</td></tr>
+  </tbody>
+</table>
+
+<h3>Voorbeeldqueries</h3>
+<pre><code>SELECT MAX(amount) FROM payment;
+SELECT AVG(amount) FROM payment;
+SELECT COUNT(*) FROM actor;
+</code></pre>
+
+<h3>Stringfuncties</h3>
+<pre><code>SELECT UPPER(title) AS film_titel FROM film;
+SELECT title, LENGTH(title) AS titel_lengte FROM film;
+SELECT TRIM(title) AS titel_bijgesneden FROM film;
+SELECT title FROM film WHERE LOWER(title) LIKE '%love%';
+</code></pre>
+
+<h3>Karakterfuncties</h3>
+<pre><code>SELECT first_name, LEFT(first_name, 1) AS eerste_karakter, RIGHT(first_name, 1) AS laatste_karakter FROM actor;
+</code></pre>
+
+<h3>GROUP BY en HAVING</h3>
+<p>
+<code>GROUP BY</code> groepeert rijen met gelijke waarden. <code>HAVING</code> filtert groepen na aggregatie.
+</p>
+<pre><code>
+SELECT last_name, COUNT(*) AS aantal
+FROM actor
+GROUP BY last_name
+HAVING COUNT(*) > 1;
+</code></pre>
+
+<h3>Oefeningen</h3>
+<ul>
+  <li><strong>Oefening 1:</strong> <code>SELECT DISTINCT rental_rate FROM film;</code></li>
+  <li><strong>Oefening 2:</strong> <code>SELECT * FROM actor WHERE last_name IN ('SMITH', 'JONES');</code></li>
+  <li><strong>Oefening 3:</strong> <code>SELECT film_id, title FROM film WHERE rental_rate > 2.99 ORDER BY title;</code></li>
+  <li><strong>Oefening 4:</strong> <code>SELECT rating, COUNT(*) FROM film GROUP BY rating HAVING COUNT(*) > 100;</code></li>
+  <li><strong>Oefening 5:</strong> <code>SELECT customer_id FROM customer WHERE email IS NULL;</code></li>
+  <li><strong>Oefening 6:</strong> <code>SELECT title FROM film WHERE rental_duration = 5 AND replacement_cost BETWEEN 15 AND 25;</code></li>
+  <li><strong>Oefening 7:</strong> <code>SELECT inventory_id FROM inventory WHERE store_id != 2;</code></li>
+  <li><strong>Oefening 8:</strong> <code>SELECT DISTINCT store_id FROM staff;</code></li>
+  <li><strong>Oefening 9:</strong> <code>SELECT store_id, COUNT(customer_id) FROM customer GROUP BY store_id;</code></li>
+  <li><strong>Oefening 10:</strong> <code>SELECT title FROM film WHERE replacement_cost > 20 ORDER BY replacement_cost DESC;</code></li>
+</ul>
+
+<h4>Meer oefeningen?</h4>
+<p>
+De cursus bevat nog tientallen extra query-oefeningen met <code>WHERE</code>, <code>LIKE</code>, <code>BETWEEN</code>, <code>IS NULL</code>, <code>GROUP BY</code>, <code>HAVING</code>, en <code>ORDER BY</code>. Deze vormen de basis voor het schrijven van krachtige en efficiënte SQL-queries.
+</p>
+
+<h2>SQL Oefeningen</h2>
+
+<h3>Oefeningen met SELECT en functies</h3>
+
+<h4>1. Film Titels in Hoofdletters</h4>
+<pre><code>SELECT UPPER(title) AS film_titel FROM film;</code></pre>
+<p>Toont alle filmtitels in hoofdletters.</p>
+
+<h4>2. Lengte van de Film Titel</h4>
+<pre><code>SELECT title, LENGTH(title) AS titel_lengte FROM film;</code></pre>
+<p>Geeft de lengte van elke titel weer.</p>
+
+<h4>3. Film Titels zonder Spaties</h4>
+<pre><code>SELECT TRIM(title) AS titel_bijgesneden FROM film;</code></pre>
+<p>Verwijdert spaties aan het begin en einde van titels.</p>
+
+<h4>4. Films met het woord 'love'</h4>
+<pre><code>SELECT title FROM film WHERE LOWER(title) LIKE '%love%';</code></pre>
+<p>Zoekt titels die het woord 'love' bevatten, ongeacht hoofdletters.</p>
+
+<h3>Oefeningen met LEFT, RIGHT en COUNT</h3>
+
+<h4>5. Eerste en Laatste Letter van Voornaam</h4>
+<pre><code>SELECT first_name, LEFT(first_name, 1) AS eerste_karakter, RIGHT(first_name, 1) AS laatste_karakter FROM actor;</code></pre>
+
+<h4>6. Aantal Unieke Familienamen</h4>
+<pre><code>SELECT COUNT(DISTINCT last_name) AS aantal FROM actor;</code></pre>
+
+<h3>Oefeningen met GROUP BY en HAVING</h3>
+
+<h4>7. Aantal Acteurs per Naam</h4>
+<pre><code>SELECT last_name, COUNT(last_name) AS aantal FROM actor GROUP BY last_name ORDER BY aantal DESC;</code></pre>
+
+<h4>8. Aantal Acteurs per Voor- en Achternaam</h4>
+<pre><code>SELECT last_name, first_name, COUNT(*) AS aantal FROM actor GROUP BY last_name, first_name ORDER BY aantal DESC;</code></pre>
+
+<h4>9. Familienamen die meer dan 1 keer voorkomen</h4>
+<pre><code>SELECT last_name FROM actor GROUP BY last_name HAVING COUNT(*) > 1;</code></pre>
+
+<h3>Oefeningen met FILTERS en CONDITIES</h3>
+
+<h4>10. Films met rental_rate > 2.99</h4>
+<pre><code>SELECT film_id, title FROM film WHERE rental_rate > 2.99 ORDER BY title;</code></pre>
+
+<h4>11. Klanten zonder e-mail</h4>
+<pre><code>SELECT customer_id FROM customer WHERE email IS NULL;</code></pre>
+
+<h4>12. Films met rental_duration = 5 en replacement_cost tussen 15 en 25</h4>
+<pre><code>SELECT title FROM film WHERE rental_duration = 5 AND replacement_cost BETWEEN 15 AND 25;</code></pre>
+
+<h4>13. Inventory waar store_id ≠ 2</h4>
+<pre><code>SELECT inventory_id FROM inventory WHERE NOT store_id = 2;</code></pre>
+
+<h4>14. Aantal klanten per store_id</h4>
+<pre><code>SELECT store_id, COUNT(customer_id) AS customer_count FROM customer GROUP BY store_id;</code></pre>
+
+<h4>15. Films met replacement_cost > 20</h4>
+<pre><code>SELECT title FROM film WHERE replacement_cost > 20 ORDER BY replacement_cost DESC;</code></pre>
+
+<h3>Oefeningen met LIKE, IN en BETWEEN</h3>
+
+<h4>16. Acteurs met last_name die begint met 'K'</h4>
+<pre><code>SELECT actor_id, first_name FROM actor WHERE last_name LIKE 'K%';</code></pre>
+
+<h4>17. Acteurs met last_name ≠ 'DAVIS' of 'JOHNSON'</h4>
+<pre><code>SELECT actor_id FROM actor WHERE last_name NOT IN ('DAVIS', 'JOHNSON');</code></pre>
+
+<h4>18. Films met length tussen 90 en 120 minuten</h4>
+<pre><code>SELECT title, film_id FROM film WHERE length BETWEEN 90 AND 120;</code></pre>
+
+<h3>Oefeningen met DATES en NULL</h3>
+
+<h4>19. Verhuurtransacties in februari 2005</h4>
+<pre><code>SELECT rental_id, rental_date FROM rental WHERE rental_date LIKE '2005-02%';</code></pre>
+
+<h4>20. Klanten aangemaakt op 14 februari 2006</h4>
+<pre><code>SELECT customer_id FROM customer WHERE create_date = '2006-02-14';</code></pre>
+
+<h4>21. Rentals zonder ingevulde return_date</h4>
+<pre><code>SELECT rental_id FROM rental WHERE return_date IS NULL;</code></pre>
+
+<h3>Oefeningen met DISTINCT en COUNT</h3>
+
+<h4>22. Verschillende ratings uit de film tabel</h4>
+<pre><code>SELECT DISTINCT rating FROM film;</code></pre>
+
+<h4>23. Aantal actieve klanten per store</h4>
+<pre><code>SELECT store_id, COUNT(customer_id) AS active_customer_count FROM customer WHERE active = 1 GROUP BY store_id;</code></pre>
+
+<h4>24. Aantal unieke films per store</h4>
+<pre><code>SELECT store_id, COUNT(DISTINCT film_id) AS unique_film_count FROM inventory GROUP BY store_id;</code></pre>
+
+
+<h2>Joins in MySQL</h2>
+
+<h3>Wat is een Join?</h3>
+<p>
+Een <strong>join</strong> combineert gegevens uit meerdere tabellen op basis van een relatie tussen kolommen, meestal via een <code>PRIMARY KEY</code> en <code>FOREIGN KEY</code>. Dit is essentieel voor relationele databases.
+</p>
+
+<h3>Types van Joins</h3>
+<ul>
+  <li><strong>INNER JOIN:</strong> toont alleen overeenkomende rijen in beide tabellen.</li>
+  <li><strong>LEFT JOIN:</strong> toont alle rijen uit de linkertabel, ook als er geen match is in de rechtertabel.</li>
+  <li><strong>RIGHT JOIN:</strong> toont alle rijen uit de rechtertabel, ook als er geen match is in de linkertabel.</li>
+  <li><strong>CROSS JOIN:</strong> toont elke combinatie van rijen uit beide tabellen (Cartesian product).</li>
+</ul>
+
+<h3>Voorbeeldtabellen</h3>
+<h4>merken</h4>
+<table border="1">
+  <tr><th>id</th><th>naam</th></tr>
+  <tr><td>1</td><td>audi</td></tr>
+  <tr><td>2</td><td>bmw</td></tr>
+  <tr><td>3</td><td>volkswagen</td></tr>
+</table>
+
+<h4>modellen</h4>
+<table border="1">
+  <tr><th>id</th><th>merkid</th><th>naam</th></tr>
+  <tr><td>1</td><td>1</td><td>A3</td></tr>
+  <tr><td>2</td><td>1</td><td>A4</td></tr>
+</table>
+
+<h3>1. INNER JOIN</h3>
+<pre><code>
+SELECT merken.naam, modellen.naam
+FROM merken
+INNER JOIN modellen ON merken.id = modellen.merkid;
+</code></pre>
+<p>Toont alleen merken die gekoppelde modellen hebben.</p>
+
+<h3>2. LEFT JOIN</h3>
+<pre><code>
+SELECT merken.naam, modellen.naam
+FROM merken
+LEFT JOIN modellen ON merken.id = modellen.merkid;
+</code></pre>
+<p>Toont alle merken, ook als ze geen modellen hebben (NULL).</p>
+
+<h3>3. RIGHT JOIN</h3>
+<pre><code>
+SELECT merken.naam, modellen.naam
+FROM merken
+RIGHT JOIN modellen ON merken.id = modellen.merkid;
+</code></pre>
+<p>Toont alle modellen, ook als ze geen gekoppeld merk hebben.</p>
+
+<h3>4. CROSS JOIN</h3>
+<pre><code>
+SELECT *
+FROM merken
+CROSS JOIN modellen;
+</code></pre>
+<p>Toont elke combinatie van merk en model.</p>
+
+<h3>Klassikale oefeningen – Sakila database</h3>
+
+<h4>1. Films met acteurs en releasejaar</h4>
+<pre><code>
+SELECT film.title, actor.first_name, actor.last_name, film.release_year
+FROM film
+INNER JOIN film_actor ON film.film_id = film_actor.film_id
+INNER JOIN actor ON film_actor.actor_id = actor.actor_id;
+</code></pre>
+
+<h4>2. Medewerkers met hun huurtransacties</h4>
+<pre><code>
+SELECT staff.first_name, staff.last_name, rental.rental_date, rental.return_date
+FROM staff
+INNER JOIN rental ON staff.staff_id = rental.staff_id;
+</code></pre>
+
+<h4>3. Klanten met hun laatst bekeken film</h4>
+<pre><code>
+SELECT customer.first_name, customer.last_name, film.title
+FROM customer
+LEFT JOIN rental ON customer.customer_id = rental.customer_id
+LEFT JOIN inventory ON rental.inventory_id = inventory.inventory_id
+LEFT JOIN film ON inventory.film_id = film.film_id
+ORDER BY rental.rental_date DESC;
+</code></pre>
+
+<h4>4. Aantal films per categorie</h4>
+<pre><code>
+SELECT category.name, COUNT(film_category.film_id) AS aantal_films
+FROM category
+LEFT JOIN film_category ON category.category_id = film_category.category_id
+GROUP BY category.category_id;
+</code></pre>
+
+<h4>5. Inventarisitems met bijbehorende film</h4>
+<pre><code>
+SELECT inventory.inventory_id, film.title
+FROM film
+RIGHT JOIN inventory ON film.film_id = inventory.film_id;
+</code></pre>
+
+<h4>6. Steden met winkels</h4>
+<pre><code>
+SELECT city.city, store.store_id
+FROM city
+RIGHT JOIN address ON city.city_id = address.city_id
+RIGHT JOIN store ON address.address_id = store.address_id;
+</code></pre>
+
+<h4>7. Alle klanten en medewerkers</h4>
+<pre><code>
+SELECT customer.first_name AS klant, staff.first_name AS medewerker
+FROM customer
+CROSS JOIN staff;
+</code></pre>
+
+<h4>8. Alle films en alle acteurs</h4>
+<pre><code>
+SELECT film.title, actor.first_name, actor.last_name
+FROM film
+CROSS JOIN actor;
+</code></pre>
+
+<h3>9. Films gehuurd door klanten met medewerker en stad</h3>
+<pre><code>
+SELECT film.title, customer.first_name AS klant, staff.first_name AS medewerker, city.city AS woonplaats
+FROM film
+INNER JOIN inventory ON film.film_id = inventory.film_id
+INNER JOIN rental ON inventory.inventory_id = rental.inventory_id
+INNER JOIN customer ON rental.customer_id = customer.customer_id
+INNER JOIN address ON customer.address_id = address.address_id
+INNER JOIN city ON address.city_id = city.city_id
+INNER JOIN staff ON rental.staff_id = staff.staff_id;
+</code></pre>
+
+<h4>10. Totale omzet per stad</h4>
+<pre><code>
+SELECT city.city, SUM(payment.amount) AS totale_omzet
+FROM payment
+INNER JOIN rental ON payment.rental_id = rental.rental_id
+INNER JOIN customer ON rental.customer_id = customer.customer_id
+INNER JOIN address ON customer.address_id = address.address_id
+INNER JOIN city ON address.city_id = city.city_id
+GROUP BY city.city;
+</code></pre>
+
+<h3>Samenvatting</h3>
+<ul>
+  <li><strong>INNER JOIN:</strong> alleen overeenkomsten</li>
+  <li><strong>LEFT JOIN:</strong> alles uit linkertabel + matches</li>
+  <li><strong>RIGHT JOIN:</strong> alles uit rechtertabel + matches</li>
+  <li><strong>CROSS JOIN:</strong> alle combinaties</li>
+</ul>
+<p>
+Joins zijn essentieel om gegevens uit meerdere tabellen te combineren en zinvolle verbanden te leggen in relationele databases.
+</p>
+
+<h2>Afsluiting van de MySQL-cursus</h2>
+
+<h3>📚 Leerdoelen</h3>
+<p>Na het doorlopen van deze cursus ben je in staat om:</p>
+<ul>
+  <li>Een relationele database te begrijpen en op te zetten</li>
+  <li>Tabellen aan te maken met correcte datatypes en veldinstellingen</li>
+  <li>Relaties te leggen tussen tabellen via <code>PRIMARY KEY</code> en <code>FOREIGN KEY</code></li>
+  <li>SQL-queries te schrijven met <code>SELECT</code>, <code>WHERE</code>, <code>ORDER BY</code>, <code>GROUP BY</code>, <code>HAVING</code></li>
+  <li>Aggregatiefuncties zoals <code>COUNT</code>, <code>AVG</code>, <code>SUM</code> en <code>MAX</code> toe te passen</li>
+  <li>Gegevens te combineren via <code>INNER JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code> en <code>CROSS JOIN</code></li>
+  <li>phpMyAdmin en de MySQL-console te gebruiken voor databasebeheer</li>
+</ul>
+
+<h3>🧠 Reflectie</h3>
+<p>
+Je hebt een stevige basis gelegd in relationele databanken en SQL. Je begrijpt nu hoe data gestructureerd, gekoppeld en bevraagd wordt. Deze kennis is essentieel voor webontwikkeling, data-analyse, backend-programmering en zelfs ethisch hacken.
+</p>
+
+<h3>🛠 Mini-project: Videotheek Database</h3>
+<p>Ontwerp een eenvoudige database voor een fictieve videotheek. Gebruik de Sakila-database als inspiratie.</p>
+
+<h4>Structuur</h4>
+<ul>
+  <li><strong>Tabellen:</strong> <code>films</code>, <code>klanten</code>, <code>verhuur</code>, <code>medewerkers</code>, <code>categorieën</code></li>
+  <li><strong>Relaties:</strong>
+    <ul>
+      <li>Elke film hoort bij één categorie</li>
+      <li>Elke verhuur is gekoppeld aan een klant, een medewerker en een film</li>
+    </ul>
+  </li>
+</ul>
+
+<h4>Te realiseren queries</h4>
+<ol>
+  <li>Toon alle films met hun categorie</li>
+  <li>Toon alle klanten en hun laatst gehuurde film</li>
+  <li>Tel het aantal verhuurde films per medewerker</li>
+  <li>Geef een overzicht van de omzet per categorie</li>
+  <li>Toon alle klanten die nog een film in bezit hebben (return_date is NULL)</li>
+</ol>
+
+<h4>Extra uitdaging</h4>
+<p>
+Voeg een tabel <code>beoordelingen</code> toe waarin klanten een score geven aan films. Schrijf een query die het gemiddelde per film toont.
+</p>
+
+<h3>🎓 Volgende stappen</h3>
+<ul>
+  <li>Leer SQL in combinatie met backend-talen zoals PHP, Python of Node.js</li>
+  <li>Verken geavanceerde onderwerpen zoals <code>views</code>, <code>stored procedures</code> en <code>triggers</code></li>
+  <li>Experimenteer met NoSQL-databases zoals MongoDB</li>
+  <li>Gebruik je kennis in echte projecten of stages</li>
+</ul>
+
+<h3>💬 Slotwoord</h3>
+<p>
+Je hebt een volledige technische basis opgebouwd — klaar om te groeien, te bouwen en te verbinden. Laat je creativiteit los op data, en wie weet ontwerp jij straks de volgende magische interface waar techniek en verhaal samenkomen.
+</p>
+
+
+</body>
+</html>

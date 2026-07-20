@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="h4-template-previewer">
+                <h3 class="text-white">H4 – Template Previewer</h3>
+
+                <!-- Inputs -->
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input id="tp_first" class="form-control" placeholder="Voornaam">
+                            <label for="tp_first">Voornaam</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+
+                            <input id="tp_last" class="form-control" placeholder="Achternaam">
+                            <label for="tp_last">Achternaam</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input id="tp_city" class="form-control" placeholder="Stad">
+                            <label for="tp_city">Stad</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pills -->
+                <ul class="nav nav-pills my-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button id="tp_p1" class="nav-link active" type="button" role="tab" aria
+                                -selected="true">
+                            P1
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button id="tp_p2" class="nav-link" type="button" role="tab" aria-select
+                                ed="false">
+                            P2
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Preview -->
+                <div class="card">
+                    <div class="card-body">
+                        <div id="tp_preview" class="placeholder-glow">
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-4"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H4 — template previewer</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Hoofdstuk 4: Named Functions
+<br>                                    // Oefening H4-A — Template Previewer
+<br>                                    // ----------------------------------
+<br>                                    document.addEventListener('DOMContentLoaded', initTemplatePreviewer);
+<br>
+<br>                                    // ========== IMPURE: entrypoint ==========
+<br>                                    function initTemplatePreviewer() {
+<br>                                    // UI refs
+<br>                                    const inpFirst  = document.getElementById('tp_first');
+<br>                                    const inpLast   = document.getElementById('tp_last');
+<br>                                    const inpCity   = document.getElementById('tp_city');
+<br>                                    const pillP1    = document.getElementById('tp_p1');
+<br>                                    const pillP2    = document.getElementById('tp_p2');
+<br>                                    const previewEl = document.getElementById('tp_preview');
+<br>
+<br>                                    // State
+<br>                                    let currentTpl = 'p1'; // 'p1' | 'p2'
+<br>
+<br>                                    // Koppelingen
+<br>                                    inpFirst.addEventListener('input', handleInputChange);
+<br>                                    inpLast .addEventListener('input', handleInputChange);
+<br>                                    inpCity .addEventListener('input', handleInputChange);
+<br>
+<br>                                    pillP1.addEventListener('click', () => handlePillClick('p1'));
+<br>                                    pillP2.addEventListener('click', () => handlePillClick('p2'));
+<br>
+<br>                                    // Eerste render
+<br>                                    render();
+<br>
+<br>                                    // ======== IMPURE HANDLERS ========
+<br>                                    function handleInputChange() {
+<br>                                    render();
+<br>                                    }
+<br>
+<br>                                    function handlePillClick(which) {
+<br>                                    currentTpl = which;
+<br>                                    setActivePill(pillP1, pillP2, which);
+<br>                                    render();
+<br>                                    }
+<br>
+<br>                                    // ======== IMPURE RENDER ========
+<br>                                    function render() {
+<br>                                    const values = readValues(inpFirst, inpLast, inpCity);
+<br>                                    const msg = makeMessage(currentTpl, values);
+<br>
+<br>                                    // placeholder weg, platte tekst erin
+<br>                                    previewEl.className = ''; // verwijder placeholder-klassen
+<br>                                    previewEl.textContent = msg;
+<br>                                    }
+<br>                                    }
+<br>
+<br>                                    // ========== PURE: logica ==========
+<br>                                    function readValues(inpFirst, inpLast, inpCity) {
+<br>                                    // leest DOM (impure in strikte zin), maar behoudt hier voor compactheid van handlers
+<br>                                    return {
+<br>                                    first: inpFirst.value.trim(),
+<br>                                    last:  inpLast.value.trim(),
+<br>                                    city:  inpCity.value.trim()
+<br>                                    };
+<br>                                    }
+<br>
+<br>                                    function isComplete(values) {
+<br>                                    return values.first !== '' && values.last !== '' && values.city !== '';
+<br>                                    }
+<br>
+<br>                                    function tmplP1(values) {
+<br>                                    // P1: korte zin
+<br>                                    return `Hallo ${values.first} ${values.last} uit ${values.city}!`;
+<br>                                    }
+<br>
+<br>                                    function tmplP2(values) {
+<br>                                    // P2: langere zin
+<br>                                    return `${values.first} ${values.last} woont in ${values.city}. Fijn dat je er bent, ${values.first}!`;
+<br>                                    }
+<br>
+<br>                                    function makeMessage(templateKey, values) {
+<br>                                    if (!isComplete(values)) return 'Vul alle velden in';
+<br>
+<br>                                    if (templateKey === 'p1') return tmplP1(values);
+<br>                                    if (templateKey === 'p2') return tmplP2(values);
+<br>
+<br>                                    return 'Onbekende template';
+<br>                                    }
+<br>
+<br>                                    // ========== IMPURE: UI helpers ==========
+<br>                                    function setActivePill(p1Btn, p2Btn, which) {
+<br>                                    // active class beheren zoals Bootstrap pills
+<br>                                    if (which === 'p1') {
+<br>                                    p1Btn.className = 'nav-link active';
+<br>                                    p2Btn.className = 'nav-link';
+<br>                                    } else {
+<br>                                    p1Btn.className = 'nav-link';
+<br>                                    p2Btn.className = 'nav-link active';
+<br>                                    }
+<br>                                    }
+<br>                                    /*
+<br>                                    * Een pure functie en een impure functie verschillen doordat ze een ander doel hebben in je code.
+<br>
+<br>                                    ---
+<br>
+<br>                                    Pure functie
+<br>
+<br>                                    Doet een berekening, raakt niets anders aan.
+<br>
+<br>                                    | Kenmerk             | Betekenis                                                                        |
+<br>                                    | ------------------- | -------------------------------------------------------------------------------- |
+<br>                                    | Heeft alleen input  | Gebruikt enkel wat je meegeeft (parameters)                                      |
+<br>                                    | Geeft alleen output | Return van een resultaat                                                         |
+<br>                                    | Geen bijwerkingen   | Verandert niets in de UI, console, netwerk, database, variabelen buiten zichzelf |
+<br>                                    | Altijd voorspelbaar | Met dezelfde input komt altijd dezelfde output                                   |
+<br>
+<br>                                    **Voorbeeld**
+<br>
+<br>                                    function dubbel(x) {
+<br>                                    return x * 2;
+<br>                                    }
+<br>
+<br>                                    Zelfde input → zelfde output, altijd.
+<br>
+<br>                                    ---
+<br>
+<br>                                    Impure functie
+<br>
+<br>                                    Doet iets met de buitenwereld (bijwerking).
+<br>
+<br>                                    | Kenmerk                             | Betekenis                         |
+<br>                                    | ----------------------------------- | --------------------------------- |
+<br>                                    | Past dingen aan buiten zichzelf aan | DOM, console, netwerk, opslag…    |
+<br>                                    | Geen vaste output nodig             | Hoeft geen return te hebben       |
+<br>                                    | Kan onverwachte gevolgen hebben     | Verandering hangt af van omgeving |
+<br>
+<br>                                    Voorbeeld
+<br>
+<br>                                    function toon(tekst) {
+<br>                                    document.getElementById("box").textContent = tekst;
+<br>                                    }
+<br>
+<br>                                    Dit verandert de UI, dus dit is impure.
+<br>
+<br>                                    Eenvoudige manier om te onthouden
+<br>
+<br>                                    | Pure                | Impure                     |
+<br>                                    | ------------------- | -------------------------- |
+<br>                                    | Denkt               | Doet                       |
+<br>                                    | Rekent              | Verandert dingen           |
+<br>                                    | Returnt             | Update UI / console / data |
+<br>                                    | Altijd voorspelbaar | Afhankelijk van omgeving   |
+<br>
+<br>                                    Waarom gebruiken we beide?
+<br>
+<br>                                    * Pure functies houden logica helder en testbaar.
+<br>                                    * Impure functies verbinden de logica met de echte wereld (UI).
+<br>
+<br>                                    In deze cursus:
+<br>
+<br>                                    > Pure = berekenen
+<br>                                    > Impure = DOM & events
+<br>
+<br>                                    * */
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth4b.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H4b</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

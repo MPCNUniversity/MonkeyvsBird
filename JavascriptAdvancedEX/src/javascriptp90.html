@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body class="bg-primary-translucent">
+
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+        <div class="container-fluid">
+          <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+
+          </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+     
+
+<section class="container py-4" id="ex-m1">
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+        Webshop Producten
+        <span style="background-color:rgb(179, 177, 88)"; class="badge text-dark" id="cart_count">0</span>
+    </div>
+    <div class="card-body" id="prod_container"></div>
+</div>
+
+<div id="cart_msg" class="alert alert-secondary mt-2 mb-0">
+    Voeg een product toe aan je winkelmandje
+</div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening p 90 — mini-webshop</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>
+<br>    // pagina 90 
+<br>    // Hoofdstuk 21: Mini Webshop Project
+<br>    // --------------------------------------
+<br>    (() => {
+<br>    
+<br>    class Product {
+<br>        constructor(name, price, emoji) {
+<br>            this.name = name;
+<br>            this.price = price;
+<br>            this.emoji = emoji;
+<br>        }
+<br>    
+<br>        label() {
+<br>            return `${this.emoji} ${this.name} — €${this.price.toFixed(2)}`;
+<br>        }
+<br>    }
+<br>    
+<br>    const products3 = [
+<br>        new Product("Pizza", 12.5, "🍕"),
+<br>        new Product("Hamburger", 9.9, "🍔"),
+<br>        new Product("Sushi", 15.0, "🍣"),
+<br>        new Product("Frietjes", 4.5, "🍟")
+<br>    ];
+<br>    
+<br>    let cartCount = 0;
+<br>    
+<br>    function renderProducts() {
+<br>        const cont = document.getElementById("prod_container");
+<br>    
+<br>        cont.innerHTML = products3
+<br>            .map((p, i) => `
+<br>          < div class="card mb-2">
+<br>            < div class="card-body d-flex justify-content-between align-items-center">
+<br>              < strong>${p.label()}< /strong>
+<br>              < button class="btn btn-sm btn-success prod_buy" data-idx="${i}">
+<br>                Koop
+<br>              < /button>
+<br>            < /div>
+<br>          < /div>
+<br>        `)
+<br>            .join("");
+<br>    }
+<br>    
+<br>    function addToCart(idx) {
+<br>        cartCount++;
+<br>        const badge = document.getElementById("cart_count");
+<br>        const msg = document.getElementById("cart_msg");
+<br>    
+<br>        badge.textContent = cartCount;
+<br>        badge.classList.add("cart-added");
+<br>        setTimeout(() => badge.classList.remove("cart-added"), 300);
+<br>    
+<br>        msg.className = "alert alert-success mt-2 mb-0";
+<br>        msg.textContent =  `${products3[idx].name} toegevoegd aan winkelmandje`;
+<br>    }
+<br>    
+<br>    document.addEventListener("DOMContentLoaded", () => {
+<br>        renderProducts();
+<br>    
+<br>        document.getElementById("prod_container")
+<br>            ?.addEventListener("click", (e) => {
+<br>                if (e.target.classList.contains("prod_buy")) {
+<br>                    addToCart(e.target.dataset.idx);
+<br>                }
+<br>            });
+<br>    });
+<br>    })();
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptp95.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 33</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body class="bg-primary-translucent">
+
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+        <div class="container-fluid">
+          <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+
+          </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+     
+
+<section class="container py-4" id="ex-m1">
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-secondary text-white">
+        Hoofdstuk 20: ES6 Classes Demo
+    </div>
+    <div class="card-body">
+
+        <input id="cls_name" class="form-control mb-2" placeholder="Naam">
+        <input id="cls_age" type="number" class="form-control mb-2" placeholder="Leeftijd">
+
+        <select id="cls_role" class="form-select mb-3">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <button id="cls_btn" class="btn btn-secondary w-100 mb-3">Maak gebruiker</button>
+
+        <ul id="cls_list" class="list-group"></ul>
+
+    </div>
+</div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening p 86 — classes + extends + super</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>
+<br>    // pagina 86 es6 classes demo
+<br>    // Hoofdstuk 20: ES6 Classes + extends + super
+<br>    // ---------------------------------------------
+<br>    (() => {
+<br>    
+<br>    class User {
+<br>        constructor(name, age) {
+<br>            this.name = name;
+<br>            this.age = age;
+<br>        }
+<br>    
+<br>        info() {
+<br>            return `${this.name} (${this.age} jaar)`;
+<br>        }
+<br>    }
+<br>    
+<br>    class Admin extends User {
+<br>        constructor(name, age) {
+<br>            super(name, age);
+<br>            this.role = "Admin";
+<br>        }
+<br>    
+<br>        info() {
+<br>            return `[ADMIN] ${super.info()}`;
+<br>        }
+<br>    }
+<br>    
+<br>    const clsUsers = [];
+<br>    
+<br>    function addClassUser() {
+<br>        const name = document.getElementById("cls_name").value.trim();
+<br>        const age = Number(document.getElementById("cls_age").value);
+<br>        const role = document.getElementById("cls_role").value;
+<br>        const list = document.getElementById("cls_list");
+<br>    
+<br>        if (!name || !age) return;
+<br>    
+<br>        const user = role === "admin"
+<br>            ? new Admin(name, age)
+<br>            : new User(name, age);
+<br>    
+<br>        clsUsers.push(user);
+<br>    
+<br>        list.innerHTML = clsUsers
+<br>            .map(u => `<li class="list-group-item">${u.info()}</li>`)
+<br>            .join("");
+<br>    }
+<br>    
+<br>    document.addEventListener("DOMContentLoaded", () => {
+<br>        document.getElementById("cls_btn")
+<br>            ?.addEventListener("click", addClassUser);
+<br>    });
+<br>    
+<br>    })(); 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptp90.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 32</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

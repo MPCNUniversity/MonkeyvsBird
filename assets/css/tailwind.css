@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scoped style  zorgt voor een omzetting van het kleur van het icon uit de supabase database naar de text-kleur*/
+.icon-wrapper svg {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,128 @@
+  body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    display: flexbox;
+    justify-content: left;
+    align-items: flex-end;
+    height: 100vh;
+    cursor: url('../im/hexie.png') 10 10, auto; /* Verplaats de hotspot als nodig */
+    background: url('../im/background2.png') no-repeat center center;
+    background-size: cover; /* Veranderd van 'cover' naar 'contain' */
+    background-attachment: scroll;
+    background-color: black; /* Optioneel: een kleur achter de afbeelding */
+  }
+
+  .container {
+    position: relative;
+    left: 20px;
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+  }
+  
+  .enter-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .enter-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .turbo-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: darkred;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px darkred;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .turbo-button:hover {
+    background-color: crimson;
+    box-shadow: 0 0 15px crimson;
+  }
+  
+  .star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 6px gold;
+    animation: fade 1s ease-out forwards;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+
+   .artefact {
+    background-image: url('./../im/friedel.jpg');
+ position: fixed;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #888;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+  }
+  .artefact:hover {
+    box-shadow: 0 0 12px #0ff;
+        transform: scale(1.1) rotate(2deg);
+  }
+    .tooltip {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+       position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    background: #222; padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    opacity: 0; transition: opacity 0.3s;
+  }
+     .artefact:hover .tooltip { opacity: 1; }
+  

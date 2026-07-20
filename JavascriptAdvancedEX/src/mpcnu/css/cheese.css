@@ -1,0 +1,38 @@
+  background-image: url('../im/StoneOwl.png');
+  animation: rotateCheese 2s 2s steps(1) normal infinite;
+}
+
+@keyframes rotateCheese {
+  0%   { background-image: url('../im/StoneOwl.png'); }
+  25%  { background-image: url('../im/StoneHalf.png'); }
+  50%  { background-image: url('../im/StoneClosed.png'); }
+  75%  { background-image: url('../im/StoneClosedWiggle.png'); }
+  100% { background-image: url('../im/StoneHalf.png'); }
+}
+
+
+
+  .cheese {
+  width: 64px;
+  height: 64px;
+  background-image: url('../im/StoneOwl.png');
+  animation: rotateCheese 2s 2s steps(1) normal infinite;
+}
+
+
+.cheese {
+  width: 64px;
+  height: 64px;
+  background: url('cheese-sprite.png') no-repeat;
+  animation: spinSprite 1s steps(4) infinite;
+}
+
+@keyframes spinSprite {
+  from { background-position: 0 0; }
+  to   { background-position: -256px 0; } /* 4 frames × 64px */
+}
+
+
+.cheese {
+  image-rendering: pixelated;
+}

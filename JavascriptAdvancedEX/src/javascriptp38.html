@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-sm-12">
+               <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                   <div class="container-fluid">
+                       <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                           <h1><strong><em>MPCNetwork</em></strong></h1>
+                           <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                           <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                       </button>
+                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                       </button>
+                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                               <li class="nav-item">
+                                   <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                               </li>
+                               <li class="nav-item">
+                                   <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                               </li>
+                               <li class="nav-item dropdown">
+                                   <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                       <strong><em>Oefeningen</em></strong>
+                                   </a>
+                                   <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                       <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+                                       <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+                                       <li><hr class="dropdown-divider"></li>
+                                       <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                   </ul>
+                               </li>
+
+
+                           </ul>
+                           <form class="d-flex" role="search">
+                               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                               <button class="btn btn-outline-success" type="submit">Search</button>
+                           </form>
+                       </div>
+                   </div>
+               </nav>
+               <div class="container">
+                   <div class="row">
+                       <div class="col-sm-12">
+
+                           <section class="container py-4" id="ex-m1">
+                               <div class="card shadow-sm mt-4">
+                                   <div class="card-header bg-info text-white">
+                                       Hoofdstuk 8: DOM Root Nodes
+                                   </div>
+                                   <div class="card-body">
+                                       <button id="rn_btnMessage" class="btn btn-info w-100 mb-2">Zet bericht in body</button>
+                                       <button id="rn_btnColor" class="btn btn-dark w-100 mb-2">Verander achtergrond</button>
+                                       <div id="rn_output" class="alert alert-secondary mb-0">
+                                           Wacht op actie…
+                                       </div>
+                                   </div>
+                               </div>
+                           </section>
+                           <div class="container py-4" id="ex-m2">
+                               <div class="row justify-content-center">
+                                   <div class="col-sm-10">
+                                       <div class="card shadow-sm">
+                                           <div class="card-header bg-5 text-white">Oefening p38 — verander achtergrond</div>
+                                           <div class="card-body">
+                                               <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                                   <p>
+                                                       <br>    // pagina 38 verander achtergrond
+                                                       <br>    // Hoofdstuk 8: Root Nodes
+                                                       <br>    // ----------------------------------
+                                                       <br>
+                                                       <br>    function plaatsBerichtInBody() {
+                                                       <br>        // selecteer de body
+                                                       <br>        const bodyNode = document.body;
+                                                       <br>
+                                                       <br>        // maak een nieuw element
+                                                       <br>        const p = document.createElement("p");
+                                                       <br>        p.textContent = "Bericht toegevoegd via root node! ";
+                                                       <br>        p.className = "text-center mt-2 text-success fw-bold";
+                                                       <br>
+                                                       <br>        // voeg toe aan body
+                                                       <br>        bodyNode.appendChild(p);
+                                                       <br>    }
+                                                       <br>
+                                                       <br>    function veranderAchtergrond() {
+                                                       <br>        const htmlNode = document.documentElement; // < html>
+                                                       <br>
+                                                       <br>        // lichte highlight
+                                                       <br>        htmlNode.style.background = "#e6f3ff";
+                                                       <br>    }
+                                                       <br>
+                                                       <br>    function toonFeedback(tekst) {
+                                                       <br>        const out = document.getElementById("rn_output");
+                                                       <br>        out.className = "alert alert-success mb-0";
+                                                       <br>        out.textContent = tekst;
+                                                       <br>    }
+                                                       <br>
+                                                       <br>    // Event listeners
+                                                       <br>    document.addEventListener("DOMContentLoaded", () => {
+                                                       <br>        document.getElementById("rn_btnMessage")
+                                                       <br>            ?.addEventListener("click", () => {
+                                                       <br>                plaatsBerichtInBody();
+                                                       <br>                toonFeedback("Bericht toegevoegd aan body ");
+                                                       <br>            });
+                                                       <br>
+                                                       <br>        document.getElementById("rn_btnColor")
+                                                       <br>            ?.addEventListener("click", () => {
+                                                       <br>                veranderAchtergrond();
+                                                       <br>                toonFeedback("Achtergrond aangepast via < html> node 🎨");
+                                                       <br>            });
+                                                       <br>    });
+                                                   </p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+
+                       </section>
+
+                   </div>
+                   <div class="col-sm-12 col-me-6 col-lg-4">
+
+                   </div>
+                   <span ><a href="javascriptp40.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 15</a></span>
+
+               </div>
+           </div>
+       </div>
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+<img src="images/hexie.gif" alt="hexie">
+</div>>
+</body>
+</html>
+

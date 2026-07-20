@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPCNUniversity - Venn-diagrammen</title>
+    <script src="css/mpcnu11.css"></script>
+</head>
+<!--
+Dit is de officiële website van MPCNUniversity-Javascript Basis
+Dank gaat uit naar de originele auteur van deze opleiding : mr. Tom Vanhoutte
+Zonder wiens deskundige uitleg deze site niet mogelijk zou zijn geweest!
+Dank u Tom Vanhoutte.
+Dank gaat ook uit naar de maker van deze pagina's : mr. Friedel Majoor
+Zonder wiens input deze site niet zou bestaan.
+Dank u Friedel Majoor.
+
+Aan alle studenten! Welkom & Happy coding
+-->
+<body  style="background-color: antiquewhite; cursor: url('im/pen.png') 10 10, auto;" >
+    <h1 class="titel">Venn-Diagrammen</h1>
+            <h2>Logisch Denken met Venn-diagrammen in Databases</h2>
+
+<h3>Wat is een Venn-diagram?</h3>
+<p>
+Een <strong>Venn-diagram</strong> is een visuele voorstelling van verzamelingen en hun onderlinge relaties. In databasebeheer gebruiken we Venn-diagrammen om te begrijpen hoe gegevens uit verschillende tabellen overlappen, gecombineerd of uitgesloten worden.
+</p>
+
+<h3>Toepassing in SQL Joins</h3>
+<p>
+Joins in SQL zijn directe toepassingen van set-logica. Elke join-type komt overeen met een specifieke zone in een Venn-diagram:
+</p>
+
+<h4>1. INNER JOIN</h4>
+<p>
+Toont alleen de overlappende gegevens tussen twee tabellen. In een Venn-diagram is dit het snijvlak tussen twee cirkels.
+</p>
+<pre><code>
+SELECT *
+FROM tabelA
+INNER JOIN tabelB ON tabelA.id = tabelB.id;
+</code></pre>
+
+<h4>2. LEFT JOIN</h4>
+<p>
+Toont alle gegevens uit de linkertabel, inclusief de overlappende zone. In een Venn-diagram is dit de volledige linker cirkel.
+</p>
+<pre><code>
+SELECT *
+FROM tabelA
+LEFT JOIN tabelB ON tabelA.id = tabelB.id;
+</code></pre>
+
+<h4>3. RIGHT JOIN</h4>
+<p>
+Toont alle gegevens uit de rechtertabel, inclusief de overlappende zone. In een Venn-diagram is dit de volledige rechter cirkel.
+</p>
+<pre><code>
+SELECT *
+FROM tabelA
+RIGHT JOIN tabelB ON tabelA.id = tabelB.id;
+</code></pre>
+
+<h4>4. FULL OUTER JOIN <em>(niet standaard in MySQL)</em></h4>
+<p>
+Toont alle gegevens uit beide tabellen, inclusief de overlappende en niet-overlappende zones. In een Venn-diagram is dit de volledige oppervlakte van beide cirkels.
+</p>
+
+<h4>5. CROSS JOIN</h4>
+<p>
+Toont elke mogelijke combinatie van rijen uit beide tabellen. In logische termen is dit het Cartesian product — geen overlap, maar volledige vermenigvuldiging.
+</p>
+
+<h3>Logische interpretatie</h3>
+<ul>
+  <li><strong>Snijvlak:</strong> gemeenschappelijke data (INNER JOIN)</li>
+  <li><strong>Unie:</strong> alle data uit beide tabellen (FULL JOIN)</li>
+  <li><strong>Verschil:</strong> data die enkel in één van beide tabellen zit (LEFT JOIN zonder match)</li>
+</ul>
+
+<h3>Waarom Venn-diagrammen?</h3>
+<p>
+Door Venn-diagrammen te gebruiken bij het denken over joins en relaties:
+</p>
+<ul>
+  <li>Versterk je logisch inzicht in dataverbindingen</li>
+  <li>Voorkom fouten bij het combineren van tabellen</li>
+  <li>Visualiseer wat je query echt doet</li>
+</ul>
+
+<h3>Oefening: Teken zelf</h3>
+<p>
+Teken twee cirkels: één voor <code>klanten</code>, één voor <code>bestellingen</code>. Markeer:
+</p>
+<ul>
+  <li>Het snijvlak: klanten die een bestelling hebben geplaatst</li>
+  <li>De linkerzijde: klanten zonder bestelling</li>
+  <li>De rechterzijde: bestellingen zonder geregistreerde klant</li>
+</ul>
+<p>
+Schrijf daarna de SQL-query die overeenkomt met elk deel van je diagram.
+</p>
+</body>
+</html>

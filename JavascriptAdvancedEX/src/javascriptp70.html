@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+
+</head>
+<body class="bg-primary-translucent">
+
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+        <div class="container-fluid">
+          <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+
+            <h1><strong><em>MPCNetwork</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+
+          </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">Start oefeningen</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptbasis.html" style="background: url(images/rangerOnlineOcean.gif);">cursus javascript</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+     
+
+<section class="container py-4" id="ex-m1">
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-secondary text-white">
+        Hoofdstuk 16: Event Types & preventDefault
+    </div>
+    <div class="card-body">
+
+        <a id="ev_link" href="https://google.com/" class="d-block mb-2">
+            Link naar Google (wordt tegengehouden)
+        </a>
+
+        <div id="ev_box" class="p-4 text-center border mb-3 bg-light">
+            Hover over mij 🖱️
+        </div>
+
+        <form id="ev_form2">
+            <input id="ev_input2" class="form-control mb-2" placeholder="Naam">
+            <button class="btn btn-secondary w-100">Verzend (JS blokkeert)</button>
+        </form>
+
+        <div id="ev_msg2" class="alert alert-secondary mt-3 mb-0">
+            Wacht op interactie…
+        </div>
+
+    </div>
+</div>
+ </section>
+
+   <section class="container py-4" id="ex-m1">
+ <div class="row justify-content-center">
+ <div class="col-sm-10">
+  <div class="card shadow-sm">
+    <div class="card-header bg-5 text-white">Oefening p70 — geblokkeerde link</div>
+      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>
+<br>    // pagina 70 geblokkeerde links oefening 24
+<br>    //eigen js
+<br>    document.addEventListener("DOMContentLoaded", () => {
+<br>    
+<br>        // 1) Link blokkeren
+<br>        document.getElementById("ev_link")
+<br>            ?.addEventListener("click", (e) => {
+<br>                e.preventDefault();
+<br>                document.getElementById("ev_msg2").textContent =
+<br>                    "🚫 Navigatie geblokkeerd door JS";
+<br>            });
+<br>    
+<br>        // 2) Hover effects
+<br>        const box = document.getElementById("ev_box");
+<br>    
+<br>        box.addEventListener("mouseover", () => {
+<br>            box.classList.add("bg-warning");
+<br>            box.textContent = "Hover actief!";
+<br>        });
+<br>    
+<br>        box.addEventListener("mouseleave", () => {
+<br>            box.classList.remove("bg-warning");
+<br>            box.textContent = "Hover over mij 🖱️";
+<br>        });
+<br>    
+<br>        // 3) Form prevent + feedback
+<br>        document.getElementById("ev_form2")
+<br>            ?.addEventListener("submit", (e) => {
+<br>                e.preventDefault();
+<br>    
+<br>                const name = document.getElementById("ev_input2").value.trim();
+<br>                const msg = document.getElementById("ev_msg2");
+<br>    
+<br>                if (!name) {
+<br>                    msg.className = "alert alert-danger mt-3 mb-0";
+<br>                    msg.textContent = "❌ Vul je naam in";
+<br>                    return;
+<br>                }
+<br>    
+<br>                msg.className = "alert alert-success mt-3 mb-0";
+<br>                msg.textContent =  Form verzonden voor ${name} (zonder reload!);
+<br>            });
+<br>    });
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+ </section>   
+
+ 
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+
+             <span ><a href="javascriptp72.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oef 25</a></span>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

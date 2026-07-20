@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPCNUniversity - MySQL install</title>
+    <script src="css/mpcnu11.css"></script>
+</head>
+<!--
+Dit is de officiële website van MPCNUniversity-Javascript Basis
+Dank gaat uit naar de originele auteur van deze opleiding : mr. Tom Vanhoutte
+Zonder wiens deskundige uitleg deze site niet mogelijk zou zijn geweest!
+Dank u Tom Vanhoutte.
+Dank gaat ook uit naar de maker van deze pagina's : mr. Friedel Majoor
+Zonder wiens input deze site niet zou bestaan.
+Dank u Friedel Majoor.
+
+Aan alle studenten! Welkom & Happy coding
+-->
+<body  style="background-color: antiquewhite; cursor: url('im/pen.png') 10 10, auto;" >
+    <h1 class="titel">MySQL install</h1>
+
+<h2>Cursus MySQL</h2>
+
+<h3>Introductie</h3>
+<p>
+In deze cursus leer je hoe je gegevens in een database kunt aanmaken, bewerken, opvragen en verwijderen. Dit doen we met behulp van MySQL, één van de populairste relationele databasesystemen ter wereld.
+</p>
+
+<h4>Wat is SQL?</h4>
+<p>
+SQL staat voor Structured Query Language. Het is de standaardtaal om relationele databases te beheren. Met SQL kun je tabellen aanmaken, relaties leggen en data manipuleren.
+</p>
+
+<h4>Wat is MySQL?</h4>
+<p>
+MySQL is een implementatie van SQL. Het ondersteunt de standaard SQL-commando's, maar voegt ook eigen uitbreidingen toe. Andere implementaties zijn Oracle, PostgreSQL en Microsoft SQL Server.
+</p>
+
+<h4>Hoe leer je in deze cursus?</h4>
+<ul>
+  <li>Belangrijke begrippen en commando's worden stap voor stap uitgelegd.</li>
+  <li>Bij elk onderdeel vind je voorbeelden en oefeningen.</li>
+  <li>Elke module eindigt met opdrachten om je kennis te toetsen.</li>
+</ul>
+
+<h3>Database</h3>
+<p>
+Een database is een georganiseerde verzameling gegevens die op een gestructureerde manier wordt opgeslagen en beheerd door een computersysteem.
+</p>
+
+<h4>Relationeel versus niet-relationeel</h4>
+<ul>
+  <li><strong>Relationele databases (RDBMS):</strong> Gegevens in tabellen met sleutels. Voorbeelden: MySQL, PostgreSQL, Oracle, SQL Server.</li>
+  <li><strong>Niet-relationele databases (NoSQL):</strong> Flexibele structuur voor ongestructureerde data. Voorbeelden: MongoDB, CouchDB, Redis.</li>
+</ul>
+<p>In deze cursus focussen we op relationele databases, met MySQL als praktische omgeving.</p>
+
+<h4>Waarom relationele databases?</h4>
+<ul>
+  <li>Snel terugvinden van informatie dankzij indexing en query-optimalisatie.</li>
+  <li>Relaties tussen tabellen via sleutels.</li>
+  <li>Efficiënt opslaan van data zonder duplicatie.</li>
+  <li>Beveiliging en rechtenstructuur voor verschillende gebruikers.</li>
+  <li>Gestandaardiseerde taal (SQL) die werkt in vrijwel alle systemen.</li>
+</ul>
+
+<h3>Installatie</h3>
+<p>
+Om lokaal te oefenen met MySQL en phpMyAdmin, gebruiken we een webserverpakket zoals WampServer.
+</p>
+
+<h4>Stap 1: Kies een serverpakket</h4>
+<ul>
+  <li><a href="https://www.wampserver.com">WampServer (Windows)</a></li>
+  <li><a href="https://www.apachefriends.org">XAMPP (Windows, macOS, Linux)</a></li>
+  <li><a href="https://www.mamp.info">MAMP (macOS, Windows)</a></li>
+</ul>
+<p>In deze cursus gebruiken we WampServer als voorbeeld.</p>
+
+<h4>Stap 2: Installatie</h4>
+<ol>
+  <li>Download de juiste versie van WampServer (meestal 64-bit).</li>
+  <li>Voer het installatiebestand uit en volg de instructies.</li>
+  <li>Controleer het icoontje in de taakbalk:
+    <ul>
+      <li>Rood: server uitgeschakeld</li>
+      <li>Oranje: gedeeltelijk actief</li>
+      <li>Groen: alles correct gestart</li>
+    </ul>
+  </li>
+</ol>
+
+<h4>Stap 3: phpMyAdmin openen</h4>
+<ol>
+  <li>Klik op het groene WampServer-icoon.</li>
+  <li>Kies phpMyAdmin in het menu.</li>
+  <li>Log in met:
+    <ul>
+      <li>Gebruikersnaam: <code>root</code></li>
+      <li>Wachtwoord: <em>leeg</em></li>
+    </ul>
+  </li>
+</ol>
+<p><strong>Let op:</strong> Dit is enkel veilig in een lokale omgeving. Gebruik een sterk wachtwoord op een echte server.</p>
+
+<h3>Installatie van WampServer</h3>
+
+<h4>Stap 4: Eerste kennismaking met phpMyAdmin</h4>
+<ul>
+  <li>Nieuwe databases aanmaken</li>
+  <li>Tabellen en velden definiëren</li>
+  <li>SQL-queries uitvoeren</li>
+  <li>Gebruikersrechten beheren</li>
+</ul>
+<p>
+Onderaan het startscherm zie je info over:
+<ul>
+  <li>Webserver: Apache</li>
+  <li>Databaseserver: MySQL</li>
+  <li>Beheeromgeving: phpMyAdmin</li>
+</ul>
+</p>
+
+<h4>Storage engines in MySQL</h4>
+<ul>
+  <li><strong>InnoDB:</strong> Standaard sinds MySQL 5.5. Ondersteunt relaties en transacties. Aanbevolen keuze.</li>
+  <li><strong>MyISAM:</strong> Verouderd. Geen transacties of foreign keys. Niet meer aanbevolen.</li>
+</ul>
+<p>Zorg dat je tabellen met InnoDB aanmaakt. Dit is meestal standaard actief.</p>
+
+<h4>Downloadlink WampServer</h4>
+<p>
+Surf naar <a href="http://wampserver.aviatechno.net">wampserver.aviatechno.net</a> en download de juiste versie (meestal x64).
+</p>
+
+<h4>Installatieproces</h4>
+<ol>
+  <li>Dubbelklik op het uitvoeringsbestand in je downloadsmap.</li>
+  <li>Kies de taal van de installatie (bijv. Engels).</li>
+  <li>Accepteer de licentievoorwaarden (GNU LGPL).</li>
+  <li>Lees de installatie-informatie en klik op <em>Next</em>.</li>
+  <li>Controleer of je systeem de juiste Visual C++ redistributables heeft (VC9 t/m VS16).</li>
+  <li>Installeer WampServer niet over een bestaande versie.</li>
+  <li>Kies een installatiemap zonder spaties of speciale tekens (bijv. <code>C:\wamp</code>).</li>
+  <li>Sluit programma’s zoals Skype die poort 80 gebruiken.</li>
+</ol>
+
+<h4>Componentselectie</h4>
+<p>Selecteer de gewenste onderdelen:</p>
+<ul>
+  <li>☒ Wampmanager</li>
+  <li>☒ Apache 2.4.46</li>
+  <li>☒ PHP 5.6.40, 7.3.21, 7.4.9</li>
+  <li>☒ MariaDB 10.4.13</li>
+  <li>☒ MySQL 5.7.31</li>
+  <li>☒ PhpMyAdmin 5.0.2</li>
+  <li>☒ Adminer 4.7.7</li>
+</ul>
+<p>Je kunt later extra versies toevoegen via "addons".</p>
+
+<h4>Installatiepad en snelkoppelingen</h4>
+<ul>
+  <li>Installatiepad: <code>C:\wamp64</code></li>
+  <li>Startmenu-map: Wampserver64</li>
+</ul>
+
+<h4>Klaar om te installeren</h4>
+<p>
+Klik op <em>Install</em> om de installatie te starten. Controleer of alle instellingen correct zijn.
+</p>
+
+<h3>Tips voor eerste gebruik</h3>
+
+<h4>1. Start WampServer correct op</h4>
+<ul>
+  <li>Dubbelklik op het WampServer-icoon op je bureaublad.</li>
+  <li>Wacht tot het icoon in de taakbalk groen wordt (alle services actief).</li>
+  <li>Indien het icoon oranje blijft, controleer of Apache of MySQL niet geblokkeerd worden door andere programma’s (zoals Skype).</li>
+</ul>
+
+<h4>2. Open phpMyAdmin</h4>
+<ul>
+  <li>Klik met de linkermuisknop op het groene WampServer-icoon.</li>
+  <li>Kies <strong>phpMyAdmin</strong> in het menu.</li>
+  <li>Log in met gebruikersnaam <code>root</code> en laat het wachtwoordveld leeg.</li>
+</ul>
+
+<h4>3. Maak je eerste database aan</h4>
+<ol>
+  <li>Ga in phpMyAdmin naar het tabblad <strong>Databases</strong>.</li>
+  <li>Geef een naam op (bijv. <code>oefendb</code>) en kies <strong>Collation</strong> als <code>utf8_general_ci</code>.</li>
+  <li>Klik op <strong>Aanmaken</strong>.</li>
+</ol>
+
+<h4>4. Maak een eerste tabel</h4>
+<ol>
+  <li>Open je nieuwe database.</li>
+  <li>Geef een tabelnaam op (bijv. <code>klanten</code>) en aantal kolommen.</li>
+  <li>Definieer kolommen zoals <code>id</code>, <code>naam</code>, <code>email</code>.</li>
+  <li>Stel <code>id</code> in als <strong>PRIMARY KEY</strong> en <strong>AUTO_INCREMENT</strong>.</li>
+</ol>
+
+<h4>5. Voer je eerste SQL-query uit</h4>
+<p>
+Ga naar het tabblad <strong>SQL</strong> en probeer bijvoorbeeld:
+</p>
+<pre><code>INSERT INTO klanten (naam, email) VALUES ('Friedel', 'friedel@example.com');</code></pre>
+
+<h4>6. Veiligheid en best practices</h4>
+<ul>
+  <li>Gebruik <strong>sterke wachtwoorden</strong> zodra je buiten een lokale omgeving werkt.</li>
+  <li>Maak regelmatig <strong>backups</strong> van je databases.</li>
+  <li>Experimenteer eerst in een testdatabase voordat je live-data aanpast.</li>
+  <li>Leer het verschil tussen <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code> en <code>DELETE</code>.</li>
+</ul>
+
+<h4>7. Hulpbronnen</h4>
+<ul>
+  <li><a href="https://dev.mysql.com/doc/">Officiële MySQL-documentatie</a></li>
+  <li><a href="https://www.w3schools.com/sql/">SQL tutorials bij W3Schools</a></li>
+  <li><a href="https://phpmyadmin.net/">phpMyAdmin documentatie</a></li>
+</ul>
+
+
+  </body>
+</html>

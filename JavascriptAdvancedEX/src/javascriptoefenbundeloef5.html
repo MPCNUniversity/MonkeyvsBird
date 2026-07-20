@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- or -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <script type="module" src="./js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="bg-primary-translucent">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <button style="color: rgb(224 141 45/ 0.973)" class="btn btn-primary-subtle border rounded-4">
+            <h1><strong><em>MPCNetwork Javascript Cursus</em></strong></h1>
+            <img src="images/hexie.gif" class="rounded-3 m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+            <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+          </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item">
+          <a class="nav-link active border elegant-link" aria-current="page" href="javascriptoefenbundelhome.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border elegant-link" href="javascriptcursus2025.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Cursus</em></strong></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+            <strong><em>Oefeningen</em></strong>
+          </a>
+          <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+            <li><a class="dropdown-item elegant-link m-2" href="oefenbundel2025deel1.pdf" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel</a></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundeloef1.html" style="background: url(images/rangerOnlineOcean.gif);">Start oef 1 -></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">-</a>
+        </li>
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+
+ <div class="col-sm-12 pt-2">
+  <div class="card shadow-sm">
+ <div class="card-header bg-primary text-white">Oefening M5 — Prijs berekenen na korting
+</div>      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>In deze oefening bereken je de nieuwe prijs van een product na toepassing van een
+ korting in procent. De gebruiker voert twee waarden in: de oorspronkelijke prijs in euro
+ en het kortingspercentage. Eerst lees je beide waarden in en controleer je of ze geldig
+ zijn. Een lege invoer, een niet-numerieke waarde of een percentage dat kleiner is dan
+ nul of groter dan honderd mag niet aanvaard worden. In dat geval geef je een
+ waarschuwing weer in een gele meldingsbox met de tekst “Vul een geldige prijs en
+ korting in (0–100%)”.
+ Wanneer de invoer wel correct is, bereken je de nieuwe prijs met de formule:
+ Nieuwe prijs = prijs × (1 − korting / 100)
+ De berekening gebeurt in een aparte functie die enkel het resultaat teruggeeft. Daarna
+ rond je de uitkomst af op twee decimalen en toon je ze in een groene meldingsbox. In
+ de tekst vermeld je zowel het kortingspercentage als het eindbedrag, bijvoorbeeld
+ “Nieuwe prijs: €85,00 (Korting: 15%)”. Zo ziet de gebruiker meteen het effect van de
+ korting. Tot slot zorg je ervoor dat deze volledige verwerking gebeurt wanneer er op de
+ knop “Bereken nieuwe prijs” wordt geklikt, zodat het resultaat direct zichtbaar wordt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<div class="row d-flex justify-content-center">
+
+ <div class="col-md-6 col-lg-5">
+ <div class="card shadow-sm">
+ <div class="card-header bg-primary text-white">Oefening M5 — Prijs
+ berekenen na korting</div>
+ <div class="card-body">
+ <label for="price" class="form-label">Oorspronkelijke prijs
+ (€)</label>
+ <input id="price" type="number" step="0.01" class="form-control mb
+2" placeholder="bijv. 100" />
+ <label for="discount" class="form-label">Korting (%)</label>
+ <input id="discount" type="number" step="0.1" class="form-control
+ mb-2" placeholder="bijv. 15" />
+ <button id="discount_btn" class="btn btn-primary w-100 mb
+3">Bereken nieuwe prijs</button>
+ <div id="discount_out" class="alert alert-secondary mb-0"
+ role="status" aria-live="polite">
+ Resultaat verschijnt hier…
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+ <div class="col-md-6 col-lg-5 pt-2">
+  <div class="card shadow-sm">
+ <div class="card-header bg-secondary  bg-8 text-white">Oefening M5 — Prijs berekenen na korting</div>      <div class="card-body">
+        <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+          <p>hier komt de oplossing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+</div>
+
+
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+        <div class="col-sm-12 col-me-6 col-lg-4">
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<span><a href="javascriptoefenbundeloef6.html">Verder</a></span>
+
+
+</body>
+</html>

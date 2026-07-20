@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main3.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="ex-calc">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                                <span>Rekenmachine</span>
+                                <span class="small opacity-75">Standaard</span>
+                            </div>
+
+                            <div class="card-body bg-black">
+                                <!-- Display -->
+                                <div class="border-0 bg-black text-white text-end p-2 fs-1" id="calc_display" aria-live="polite">0</div>
+                            </div>
+
+                            <div class="card-body pt-0">
+                                <!-- Memory row -->
+                                <div class="d-grid gap-2 mb-2" style="grid-template-columns: repeat(6, 1fr);">
+                                    <button class="btn btn-outline-secondary" id="calc_mc">MC</button>
+                                    <button class="btn btn-outline-secondary" id="calc_mr">MR</button>
+                                    <button class="btn btn-outline-secondary" id="calc_mplus">M+</button>
+                                    <button class="btn btn-outline-secondary" id="calc_mminus">M−</button>
+                                    <button class="btn btn-outline-secondary" id="calc_ms">MS</button>
+                                    <button class="btn btn-outline-secondary" id="calc_mv" disabled>M▾</button>
+                                </div>
+
+                                <!-- Main keypad -->
+                                <div class="d-grid gap-2" style="grid-template-columns: repeat(4, 1fr);">
+                                    <button class="btn btn-outline-secondary" id="btn_pct">%</button>
+                                    <button class="btn btn-outline-secondary" id="btn_ce">CE</button>
+                                    <button class="btn btn-outline-secondary" id="btn_c">C</button>
+                                    <button class="btn btn-outline-secondary" id="btn_back">⌫</button>
+
+                                    <button class="btn btn-outline-secondary" id="btn_inv">1/x</button>
+                                    <button class="btn btn-outline-secondary" id="btn_pow2">x²</button>
+                                    <button class="btn btn-outline-secondary" id="btn_sqrt">√x</button>
+                                    <button class="btn btn-outline-secondary" data-op="÷">÷</button>
+
+                                    <button class="btn btn-outline-secondary" data-digit="7">7</button>
+                                    <button class="btn btn-outline-secondary" data-digit="8">8</button>
+                                    <button class="btn btn-outline-secondary" data-digit="9">9</button>
+                                    <button class="btn btn-outline-secondary" data-op="×">×</button>
+
+                                    <button class="btn btn-outline-secondary" data-digit="4">4</button>
+                                    <button class="btn btn-outline-secondary" data-digit="5">5</button>
+                                    <button class="btn btn-outline-secondary" data-digit="6">6</button>
+                                    <button class="btn btn-outline-secondary" data-op="−">−</button>
+
+                                    <button class="btn btn-outline-secondary" data-digit="1">1</button>
+                                    <button class="btn btn-outline-secondary" data-digit="2">2</button>
+                                    <button class="btn btn-outline-secondary" data-digit="3">3</button>
+                                    <button class="btn btn-outline-secondary" data-op="+">+</button>
+
+                                    <button class="btn btn-outline-secondary" id="btn_sign">+/−</button>
+                                    <button class="btn btn-outline-secondary" data-digit="0">0</button>
+                                    <button class="btn btn-outline-secondary" id="btn_comma">,</button>
+                                    <button class="btn btn-primary" id="btn_eq">=</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening M7 — Rekenmachine</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Eindoefening — Rekenmachine (Windows-stijl)
+<br>                                    // -----------------------------------------
+<br>
+<br>                                    // Interne toestand
+<br>                                    let mem = 0;                 // geheugen
+<br>                                    let cur = "0";               // huidige invoer als string (met komma)
+<br>                                    let prev = null;             // vorig getal (number)
+<br>                                    let op = null;               // huidig bewerkingsteken: "+", "−", "×", "÷"
+<br>                                    let justEvaluated = false;   // laatste actie was "=" (om nieuwe invoer te starten)
+<br>
+<br>                                    // Helpers
+<br>                                    const $ = (id) => document.getElementById(id);
+<br>                                    const display = () => { $("calc_display").textContent = cur; };
+<br>                                    const toNumber = (s) => parseFloat(s.replace(",", "."));             // "12,3" -> 12.3
+<br>                                    const fromNumber = (n) => String(n).replace(".", ",");               // 12.3  -> "12,3"
+<br>                                    const isZero = (s) => s === "0" || s === "-0";
+<br>
+<br>                                    function setCurFromNumber(n) {
+<br>                                    // Beperk op lengte en verwijder onnodige trailing nullen
+<br>                                    if (!Number.isFinite(n)) {
+<br>                                    cur = "Niet gedefinieerd";
+<br>                                    return;
+<br>                                    }
+<br>                                    let s = fromNumber(n);
+<br>                                    if (s.includes(",")) {
+<br>                                    // trim trailing zeros
+<br>                                    s = s.replace(/,?0+$/, (m) => (m.startsWith(",") ? "" : m));
+<br>                                    }
+<br>                                    cur = s;
+<br>                                    }
+<br>
+<br>                                    function applyOp(a, b, operator) {
+<br>                                    switch (operator) {
+<br>                                    case "+": return a + b;
+<br>                                    case "−": return a - b;
+<br>                                    case "×": return a * b;
+<br>                                    case "÷": return b === 0 ? NaN : a / b;
+<br>                                    default:  return b;
+<br>                                    }
+<br>                                    }
+<br>
+<br>                                    // Invoer: cijfers
+<br>                                    function pressDigit(d) {
+<br>                                    if (justEvaluated || (op && isZero(cur))) {
+<br>                                    cur = d;
+<br>                                    justEvaluated = false;
+<br>                                    display();
+<br>                                    return;
+<br>                                    }
+<br>                                    if (cur === "0") cur = d;
+<br>                                    else if (cur === "-0") cur = "-" + d;
+<br>                                    else cur += d;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // Invoer: komma
+<br>                                    function pressComma() {
+<br>                                    if (justEvaluated) {
+<br>                                    cur = "0,";
+<br>                                    justEvaluated = false;
+<br>                                    display();
+<br>                                    return;
+<br>                                    }
+<br>                                    if (!cur.includes(",")) {
+<br>                                    cur += ",";
+<br>                                    display();
+<br>                                    }
+<br>                                    }
+<br>
+<br>                                    // Tekens: + − × ÷
+<br>                                    function setOperator(nextOp) {
+<br>                                    const n = toNumber(cur);
+<br>                                    if (prev === null) {
+<br>                                    prev = n;
+<br>                                    } else if (op && !justEvaluated) {
+<br>                                    prev = applyOp(prev, n, op);
+<br>                                    setCurFromNumber(prev);
+<br>                                    }
+<br>                                    op = nextOp;
+<br>                                    justEvaluated = false;
+<br>                                    display();
+<br>                                    cur = "0";
+<br>                                    }
+<br>
+<br>                                    // =
+<br>                                    function evaluate() {
+<br>                                    const n = toNumber(cur);
+<br>                                    if (op === null && prev === null) return;
+<br>
+<br>                                    const a = prev === null ? 0 : prev;
+<br>                                    const result = applyOp(a, n, op);
+<br>                                    setCurFromNumber(result);
+<br>                                    prev = result;
+<br>                                    op = null;
+<br>                                    justEvaluated = true;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // CE (alleen huidige invoer wissen)
+<br>                                    function clearEntry() {
+<br>                                    cur = "0";
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // C (alles wissen)
+<br>                                    function clearAll() {
+<br>                                    cur = "0";
+<br>                                    prev = null;
+<br>                                    op = null;
+<br>                                    justEvaluated = false;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // Backspace
+<br>                                    function backspace() {
+<br>                                    if (justEvaluated) return;
+<br>                                    if (cur.length <= 1 || (cur.startsWith("-") && cur.length === 2)) {
+<br>                                    cur = "0";
+<br>                                    } else {
+<br>                                    cur = cur.slice(0, -1);
+<br>                                    if (cur === "-") cur = "0";
+<br>                                    }
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // Wissel teken
+<br>                                    function toggleSign() {
+<br>                                    if (cur.startsWith("-")) cur = cur.slice(1);
+<br>                                    else if (!isZero(cur)) cur = "-" + cur;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // Percentage (eenvoudig: huidige invoer / 100)
+<br>                                    function percent() {
+<br>                                    const n = toNumber(cur);
+<br>                                    setCurFromNumber(n / 100);
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // 1/x
+<br>                                    function invert() {
+<br>                                    const n = toNumber(cur);
+<br>                                    setCurFromNumber(1 / n);
+<br>                                    prev = null; op = null; justEvaluated = true;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // x²
+<br>                                    function pow2() {
+<br>                                    const n = toNumber(cur);
+<br>                                    setCurFromNumber(n * n);
+<br>                                    prev = null; op = null; justEvaluated = true;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // √x
+<br>                                    function sqrt() {
+<br>                                    const n = toNumber(cur);
+<br>                                    setCurFromNumber(n < 0 ? NaN : Math.sqrt(n));
+<br>                                    prev = null; op = null; justEvaluated = true;
+<br>                                    display();
+<br>                                    }
+<br>
+<br>                                    // Memory
+<br>                                    function mClear() { mem = 0; }
+<br>                                    function mRecall() { setCurFromNumber(mem); display(); justEvaluated = true; }
+<br>                                    function mStore()  { mem = toNumber(cur); }
+<br>                                    function mPlus()   { mem += toNumber(cur); }
+<br>                                    function mMinus()  { mem -= toNumber(cur); }
+<br>
+<br>                                    // Event-koppelingen
+<br>                                    document.addEventListener("DOMContentLoaded", () => {
+<br>                                    // Cijfers
+<br>                                    document.querySelectorAll("[data-digit]").forEach(btn => {
+<br>                                    btn.addEventListener("click", () => pressDigit(btn.getAttribute("data-digit")));
+<br>                                    });
+<br>                                    // Komma en basis
+<br>                                    $("btn_comma").addEventListener("click", pressComma);
+<br>                                    $("btn_ce").addEventListener("click", clearEntry);
+<br>                                    $("btn_c").addEventListener("click", clearAll);
+<br>                                    $("btn_back").addEventListener("click", backspace);
+<br>                                    $("btn_sign").addEventListener("click", toggleSign);
+<br>                                    $("btn_pct").addEventListener("click", percent);
+<br>                                    $("btn_inv").addEventListener("click", invert);
+<br>                                    $("btn_pow2").addEventListener("click", pow2);
+<br>                                    $("btn_sqrt").addEventListener("click", sqrt);
+<br>                                    $("btn_eq").addEventListener("click", evaluate);
+<br>
+<br>                                    // Operators
+<br>                                    document.querySelectorAll("[data-op]").forEach(btn => {
+<br>                                    btn.addEventListener("click", () => setOperator(btn.getAttribute("data-op")));
+<br>                                    });
+<br>
+<br>                                    // Memory
+<br>                                    $("calc_mc").addEventListener("click", mClear);
+<br>                                    $("calc_mr").addEventListener("click", mRecall);
+<br>                                    $("calc_ms").addEventListener("click", mStore);
+<br>                                    $("calc_mplus").addEventListener("click", mPlus);
+<br>                                    $("calc_mminus").addEventListener("click", mMinus);
+<br>
+<br>                                    // Init
+<br>                                    display();
+<br>                                    });
+<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="pokemon.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">A black Kitten spawns nearby. You follow it... </a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

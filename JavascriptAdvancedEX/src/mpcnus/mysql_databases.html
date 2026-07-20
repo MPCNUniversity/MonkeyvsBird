@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPCNUniversity - MySQL databases</title>
+    <script src="css/mpcnu11.css"></script>
+</head>
+<!--
+Dit is de officiële website van MPCNUniversity-Javascript Basis
+Dank gaat uit naar de originele auteur van deze opleiding : mr. Tom Vanhoutte
+Zonder wiens deskundige uitleg deze site niet mogelijk zou zijn geweest!
+Dank u Tom Vanhoutte.
+Dank gaat ook uit naar de maker van deze pagina's : mr. Friedel Majoor
+Zonder wiens input deze site niet zou bestaan.
+Dank u Friedel Majoor.
+
+Aan alle studenten! Welkom & Happy coding
+-->
+<body  style="background-color: antiquewhite; cursor: url('im/pen.png') 10 10, auto;" >
+    <h1 class="titel">MySQL databases</h1>
+   <h2>Werken met phpMyAdmin</h2>
+
+<h3>Introductie</h3>
+<p>
+De databaseomgeving waarin we werken is <strong>phpMyAdmin</strong>. Hier voeren we MySQL-commando’s uit op verschillende databases. Manipulatie via SQL kan onomkeerbare gevolgen hebben, zoals het verwijderen van tabellen of gebruikers. Data is waardevol, en kennis van SQL is essentieel — zeker voor wie ethisch hacker wil worden.
+</p>
+
+<h3>Openen van phpMyAdmin</h3>
+<ol>
+  <li>Dubbelklik op het WampServer-icoon op je bureaublad.</li>
+  <li>Start Apache en MySQL. Je pc fungeert nu als lokale webserver.</li>
+  <li>Controleer het icoon in de taakbalk:
+    <ul>
+      <li><strong>Groen:</strong> alles correct gestart</li>
+      <li><strong>Oranje:</strong> één service niet gestart</li>
+      <li><strong>Rood:</strong> niets gestart</li>
+    </ul>
+  </li>
+  <li>Klik op het groene icoon en kies <strong>phpMyAdmin</strong>.</li>
+</ol>
+
+<h3>Inloggen</h3>
+<ul>
+  <li>Gebruikersnaam: <code>root</code></li>
+  <li>Wachtwoord: <em>leeg</em></li>
+</ul>
+<p>
+Klik op <strong>Go</strong> om in te loggen. In een online omgeving moet je uiteraard een sterk wachtwoord instellen.
+</p>
+
+<h3>Overzicht van de omgeving</h3>
+<ul>
+  <li><strong>Server:</strong> MySQL via TCP/IP</li>
+  <li><strong>Versie:</strong> MySQL 5.7.26</li>
+  <li><strong>User:</strong> root@localhost</li>
+  <li><strong>Charset:</strong> UTF-8 Unicode</li>
+  <li><strong>Webserver:</strong> Apache 2.4.39 met PHP 7.3.5</li>
+  <li><strong>phpMyAdmin versie:</strong> 4.8.5</li>
+</ul>
+
+<h3>Nieuwe database aanmaken</h3>
+<ol>
+  <li>Klik links op <strong>New</strong>.</li>
+  <li>Geef een naam op (bijv. <code>wagens</code>).</li>
+  <li>Kies <code>utf8_general_ci</code> als characterset.</li>
+  <li>Klik op <strong>Create</strong>.</li>
+</ol>
+<p>
+De standaard engine is <strong>MyISAM</strong>, maar deze ondersteunt geen relaties. Wijzig dit naar <strong>InnoDB</strong> via het bestand <code>my.ini</code>.
+</p>
+
+<h3>Engine wijzigen naar InnoDB</h3>
+<p>
+Open <code>my.ini</code> in <code>C:\wamp64\bin\mysql\mysql5.7.26</code> en wijzig:
+</p>
+<pre><code>; The default storage engine
+default-storage-engine=InnoDB</code></pre>
+<p>Herstart WampServer om de wijziging toe te passen.</p>
+
+<h3>Database verwijderen</h3>
+<ol>
+  <li>Klik bovenaan op <strong>Server: MySQL:3306</strong>.</li>
+  <li>Ga naar het tabblad <strong>Databases</strong>.</li>
+  <li>Selecteer de database en klik op <strong>Drop</strong>.</li>
+</ol>
+
+<h3>Sample databases</h3>
+<p>
+MySQL biedt voorbeeld-databases voor studenten:
+</p>
+<ul>
+  <li><strong>employee</strong></li>
+  <li><strong>world</strong></li>
+  <li><strong>sakila</strong> (deze gebruiken wij)</li>
+  <li><strong>menagerie</strong></li>
+</ul>
+<p>
+Download de <strong>sakila</strong> database en pak uit op <code>C:\sakila-db</code>.
+</p>
+
+<h3>Installatie van Sakila database</h3>
+<ol>
+  <li>Open de MySQL-console via WampServer.</li>
+  <li>Log in met <code>root</code> en druk op Enter (wachtwoord is blanco).</li>
+  <li>Voer de volgende commando’s uit:
+    <pre><code>mysql> SOURCE C:/sakila-db/sakila-schema.sql;
+mysql> SOURCE C:/sakila-db/sakila-data.sql;</code></pre>
+  </li>
+</ol>
+
+<h3>Resultaat in phpMyAdmin</h3>
+<p>
+Na installatie zie je de <code>sakila</code> database in phpMyAdmin, met tabellen zoals:
+</p>
+<ul>
+  <li><code>actor</code></li>
+  <li><code>address</code></li>
+  <li><code>customer</code></li>
+  <li><code>film</code></li>
+  <li><code>rental</code></li>
+  <li>...en vele andere</li>
+</ul>
+<p>
+Alle tabellen zijn correct ingesteld met <strong>InnoDB</strong> en <code>utf8mb4_general_ci</code> als collation.
+</p>
+
+<h2>Tabellen en structuur in MySQL</h2>
+
+<h3>Wat is een tabel?</h3>
+<p>
+Een tabel is een gestructureerde verzameling van gegevens binnen een database. Elke tabel bestaat uit rijen (records) en kolommen (velden). Elke kolom heeft een naam, een datatype en optionele instellingen zoals <em>NULL</em>, <em>PRIMARY KEY</em>, <em>AUTO_INCREMENT</em>, enz.
+</p>
+
+<h3>Een nieuwe tabel aanmaken</h3>
+<ol>
+  <li>Open phpMyAdmin en selecteer een database.</li>
+  <li>Geef een naam op voor je nieuwe tabel (bijv. <code>klanten</code>).</li>
+  <li>Geef het aantal kolommen op (bijv. 4).</li>
+  <li>Klik op <strong>Go</strong> om de structuur te definiëren.</li>
+</ol>
+
+<h3>Datatypes in MySQL</h3>
+<p>Elke kolom in een tabel heeft een datatype dat bepaalt welk soort gegevens erin mogen staan:</p>
+<ul>
+  <li><strong>INT:</strong> gehele getallen (bijv. leeftijd, ID)</li>
+  <li><strong>VARCHAR(n):</strong> tekst met maximum n tekens (bijv. naam, e-mail)</li>
+  <li><strong>TEXT:</strong> lange tekstvelden</li>
+  <li><strong>DATE:</strong> datum (YYYY-MM-DD)</li>
+  <li><strong>DATETIME:</strong> datum en tijd</li>
+  <li><strong>BOOLEAN:</strong> waar/onwaar (true/false)</li>
+  <li><strong>DECIMAL(x,y):</strong> decimale getallen met x cijfers waarvan y na de komma</li>
+</ul>
+
+<h3>Veldinstellingen</h3>
+<p>Bij het definiëren van kolommen kun je extra instellingen toevoegen:</p>
+<ul>
+  <li><strong>NULL / NOT NULL:</strong> bepaalt of het veld leeg mag blijven</li>
+  <li><strong>DEFAULT:</strong> standaardwaarde indien geen input</li>
+  <li><strong>AUTO_INCREMENT:</strong> verhoogt automatisch bij elke nieuwe rij (vaak bij ID's)</li>
+  <li><strong>UNIQUE:</strong> geen dubbele waarden toegestaan</li>
+  <li><strong>COMMENT:</strong> optionele beschrijving van het veld</li>
+</ul>
+
+<h3>Primary Key</h3>
+<p>
+Een <strong>Primary Key</strong> is een unieke identificatie voor elke rij in een tabel. Meestal is dit een kolom zoals <code>id</code> met <code>AUTO_INCREMENT</code>. Een tabel mag slechts één primary key hebben.
+</p>
+
+<h3>Foreign Key</h3>
+<p>
+Een <strong>Foreign Key</strong> legt een relatie tussen twee tabellen. Het verwijst naar een <code>Primary Key</code> in een andere tabel. Dit zorgt voor referentiële integriteit.
+</p>
+<p>Voorbeeld:</p>
+<ul>
+  <li>Tabel <code>klanten</code> heeft <code>id</code> als primary key.</li>
+  <li>Tabel <code>bestellingen</code> heeft <code>klant_id</code> als foreign key die verwijst naar <code>klanten.id</code>.</li>
+</ul>
+
+<h3>Relaties leggen in phpMyAdmin</h3>
+<ol>
+  <li>Ga naar het tabblad <strong>Structure</strong> van een tabel.</li>
+  <li>Klik op <strong>Relation view</strong> onderaan.</li>
+  <li>Selecteer de kolom die je wil koppelen als foreign key.</li>
+  <li>Kies de gerelateerde tabel en kolom (meestal <code>id</code>).</li>
+  <li>Activeer <strong>ON DELETE</strong> en <strong>ON UPDATE</strong> opties indien gewenst (bijv. CASCADE).</li>
+</ol>
+
+<h3>Best practices</h3>
+<ul>
+  <li>Gebruik <code>INT</code> voor ID's en <code>VARCHAR</code> voor tekstvelden.</li>
+  <li>Stel <code>NOT NULL</code> in waar mogelijk om datakwaliteit te garanderen.</li>
+  <li>Gebruik <code>InnoDB</code> als engine voor relationele tabellen.</li>
+  <li>Geef duidelijke namen aan kolommen en tabellen (bijv. <code>klant_id</code> i.p.v. <code>id2</code>).</li>
+</ul>
+
+<h3>Veelgebruikte datatypes in MySQL</h3>
+<p>
+Bij het aanmaken van tabellen is het belangrijk om het juiste datatype te kiezen voor elke kolom. Hieronder vind je een overzicht van de meest gebruikte datatypes, inclusief hun bereik en typische toepassingen.
+</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Bereik (Signed)</th>
+      <th>Bereik (Unsigned)</th>
+      <th>Toepassing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TINYINT</td>
+      <td>-128 tot 127</td>
+      <td>0 tot 255</td>
+      <td>Kleine statuswaarden (bv. ja/nee, true/false)</td>
+    </tr>
+    <tr>
+      <td>SMALLINT</td>
+      <td>-32.768 tot 32.767</td>
+      <td>0 tot 65.535</td>
+      <td>Leeftijd, aantal producten, scores</td>
+    </tr>
+    <tr>
+      <td>MEDIUMINT</td>
+      <td>-8.388.608 tot 8.388.607</td>
+      <td>0 tot 16.777.215</td>
+      <td>Unieke ID’s voor middelgrote datasets</td>
+    </tr>
+    <tr>
+      <td>INT / INTEGER</td>
+      <td>-2.147.483.648 tot 2.147.483.647</td>
+      <td>0 tot 4.294.967.295</td>
+      <td>Primaire sleutels, grote tellers</td>
+    </tr>
+    <tr>
+      <td>BIGINT</td>
+      <td>-9.22×10¹⁸ tot 9.22×10¹⁸</td>
+      <td>0 tot 1.84×10¹⁹</td>
+      <td>Financiële data, grote datasets</td>
+    </tr>
+    <tr>
+      <td>DECIMAL(x,y)</td>
+      <td>Afhankelijk van x en y</td>
+      <td>Afhankelijk van x en y</td>
+      <td>Exacte decimale waarden (bv. prijzen)</td>
+    </tr>
+    <tr>
+      <td>FLOAT</td>
+      <td>±3.4E-38 tot ±3.4E+38</td>
+      <td>±1.18E-38 tot ±3.4E+38</td>
+      <td>Benaderde decimale waarden</td>
+    </tr>
+    <tr>
+      <td>DOUBLE</td>
+      <td>±2.2E-308 tot ±1.8E+308</td>
+      <td>±2.2E-308 tot ±1.8E+308</td>
+      <td>Wetenschappelijke berekeningen</td>
+    </tr>
+    <tr>
+      <td>CHAR(n)</td>
+      <td>Vaste lengte: 0–255 tekens</td>
+      <td>—</td>
+      <td>Vaste codes, landafkortingen</td>
+    </tr>
+    <tr>
+      <td>VARCHAR(n)</td>
+      <td>Variabele lengte: 0–65.535 tekens (afhankelijk van charset)</td>
+      <td>—</td>
+      <td>Namen, e-mails, adressen</td>
+    </tr>
+    <tr>
+      <td>TEXT</td>
+      <td>Tot 65.535 tekens</td>
+      <td>—</td>
+      <td>Beschrijving, opmerkingen</td>
+    </tr>
+    <tr>
+      <td>DATE</td>
+      <td>1000-01-01 tot 9999-12-31</td>
+      <td>—</td>
+      <td>Geboortedatum, registratiedatum</td>
+    </tr>
+    <tr>
+      <td>DATETIME</td>
+      <td>1000-01-01 00:00:00 tot 9999-12-31 23:59:59</td>
+      <td>—</td>
+      <td>Tijdstempels, logboeken</td>
+    </tr>
+    <tr>
+      <td>BOOLEAN / BOOL</td>
+      <td>0 (false) of 1 (true)</td>
+      <td>—</td>
+      <td>Statusvelden, vinkjes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Tips bij datatypekeuze</h4>
+<ul>
+  <li>Kies het kleinste datatype dat je nodig hebt voor efficiëntie.</li>
+  <li>Gebruik <code>UNSIGNED</code> als negatieve waarden niet nodig zijn.</li>
+  <li>Gebruik <code>DECIMAL</code> voor geldbedragen, niet <code>FLOAT</code>.</li>
+  <li>Gebruik <code>VARCHAR</code> in plaats van <code>TEXT</code> als je wilt sorteren of indexeren.</li>
+</ul>
+
+<section>
+  <h2>🧱 CREATE DATABASE — De fundering</h2>
+  <p>Gebruik dit commando om een nieuwe database aan te maken:</p>
+  <pre><code>CREATE DATABASE winkel;</code></pre>
+  <p>Je kunt ook extra opties meegeven:</p>
+  <pre><code>CREATE DATABASE winkel CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</code></pre>
+</section>
+
+<section>
+  <h2>📦 CREATE TABLE — Tabellen aanmaken</h2>
+  <p>Basisstructuur voor een tabel:</p>
+  <pre><code>
+CREATE TABLE producten (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  naam VARCHAR(100) NOT NULL,
+  prijs DECIMAL(6,2),
+  voorraad INT
+);
+  </code></pre>
+  <p>Elke kolom krijgt een datatype en optionele constraints zoals <code>NOT NULL</code>, <code>AUTO_INCREMENT</code>, enz.</p>
+</section>
+
+<section>
+  <h2>🔗 Relaties leggen — PRIMARY KEY & FOREIGN KEY</h2>
+  <h3>PRIMARY KEY</h3>
+  <pre><code>
+CREATE TABLE klanten (
+  klant_id INT AUTO_INCREMENT PRIMARY KEY,
+  naam VARCHAR(100),
+  email VARCHAR(100)
+);
+  </code></pre>
+
+  <h3>FOREIGN KEY</h3>
+  <pre><code>
+CREATE TABLE bestellingen (
+  bestelling_id INT AUTO_INCREMENT PRIMARY KEY,
+  klant_id INT,
+  datum DATE,
+  FOREIGN KEY (klant_id) REFERENCES klanten(klant_id)
+);
+  </code></pre>
+
+  <p>Vergelijking:</p>
+  <ul>
+    <li><strong>PRIMARY KEY</strong>: unieke identificatie in eigen tabel</li>
+    <li><strong>FOREIGN KEY</strong>: verwijst naar een PRIMARY KEY in een andere tabel</li>
+    <li>Elke tabel mag één PRIMARY KEY hebben, maar meerdere FOREIGN KEYs</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🛠️ In phpMyAdmin</h2>
+  <ul>
+    <li>Gebruik de <strong>SQL-tab</strong> om bovenstaande code uit te voeren</li>
+    <li>Of werk via de GUI: database aanmaken → tabellen toevoegen → relaties leggen via “Relation view”</li>
+  </ul>
+</section>
+
+
+</body>
+</html>

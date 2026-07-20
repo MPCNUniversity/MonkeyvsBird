@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+            <section class="container py-4" id="h6-shop-cats">
+                <h3 class="text-white">H6 – Shop Categories</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" id="sc_crumb">Alle</li>
+                    </ol>
+                </nav>
+                <ul id="sc_filters" class="list-group list-group-horizontal">
+                    <li class="list-group-item active">Alle</li>
+                    <li class="list-group-item">Laptops</li>
+                    <li class="list-group-item">Monitors</li>
+                    <li class="list-group-item">Accessoires</li>
+                </ul>
+                <ul id="sc_items" class="list-group mt-3"></ul>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H6b — Shop categories</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // Hoofdstuk 6: Arrow Functions (=>)
+<br>                                    // Oefening H6-B — Shop Categories
+<br>                                    // ----------------------------------
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>                                    const crumb   = document.getElementById('sc_crumb');
+<br>                                    const filters = document.getElementById('sc_filters');
+<br>                                    const itemsEl = document.getElementById('sc_items');
+<br>
+<br>                                    // lokale dataset
+<br>                                    const products = [
+<br>                                    { name: 'MacBook Air 13',      cat: 'Laptops' },
+<br>                                    { name: 'ThinkPad X1 Carbon',  cat: 'Laptops' },
+<br>                                    { name: 'Dell Ultrasharp 27"', cat: 'Monitors' },
+<br>                                    { name: 'LG 34" UltraWide',    cat: 'Monitors' },
+<br>                                    { name: 'USB-C Dock',          cat: 'Accessoires' },
+<br>                                    { name: 'Wireless Mouse',      cat: 'Accessoires' },
+<br>                                    ];
+<br>
+<br>                                    let current = 'Alle';
+<br>
+<br>                                    // helpers
+<br>
+<br>                                    // Deze functie zorgt ervoor dat slechts één filter-item actief is.
+<br>                                    // Eerst verwijdert ze de active-klasse bij alle items,
+<br>                                    // daarna voegt ze active toe aan het item waarop jij geklikt hebt.
+<br>                                    //
+<br>                                    // Dus: eerst alles netjes schoonmaken, dan het juiste element aanzetten.
+<br>
+<br>                                    // const setActive = li => { ... }
+<br>                                    // We maken een arrow function met de naam setActive
+<br>                                    // Ze krijgt één parameter: li
+<br>                                    // li staat voor het list-item waarop geklikt is
+<br>                                    // Denk: "Deze functie activeert het LI-element dat ik doorgeef."
+<br>
+<br>                                    // [...filters.children]
+<br>                                    // filters.children geeft een HTMLCollection terug
+<br>                                    // (een soort lijst met alle < li> elementjes binnen #sc_filters)
+<br>                                    // [ ... ] is de spread operator
+<br>                                    // Hiermee maken we een echte array van die lijst
+<br>                                    // Waarom?
+<br>                                    // Omdat een HTMLCollection niet alle array-methodes heeft, maar een array wel.
+<br>
+<br>                                    // .forEach(el => el.classList.remove('active'))
+<br>                                    //     We lopen over elk filter-item
+<br>                                    //     el = één < li> per ronde
+<br>                                    //     Voor elke el roepen we classList.remove('active') op
+<br>                                    //     Dus hier zeggen we:
+<br>                                    //     "Haal de class active weg bij iedereen."
+<br>
+<br>                                    // li.classList.add('active')
+<br>                                    // Daarna voegen we active toe aan het aangewezen element (het geklikte li)
+<br>                                    // Hierdoor wordt dat item visueel “actief” (Bootstrap styling)
+<br>                                    const setActive = li => {
+<br>                                    [...filters.children].forEach(el => el.classList.remove('active'));
+<br>                                    li.classList.add('active');
+<br>                                    };
+<br>
+<br>                                    // Als de gekozen categorie Alle is, toon dan alle producten.
+<br>                                    // Anders, toon alleen de producten waarvan de categorie hetzelfde is als wat de gebruiker koos.
+<br>                                    //     current === 'Alle':
+<br>                                    //        Kijk of de huidige gekozen filter "Alle" is.
+<br>                                    //     ? products:
+<br>                                    //        Ja → dan zetten we list gelijk aan de volledige lijst producten.
+<br>                                    //     : products.filter(...)
+<br>                                    //        Nee → dan filteren we de producten zodat alleen de juiste categorie overblijft.
+<br>                                    //        p is een product uit de lijst products. Tijdens de filter doorlopen we dus achtereenvolgens alle producten
+<br>                                    //        uit de array
+<br>
+<br>                                    //     list.map(...) maakt een lijst van HTML-stukjes, zoals:
+<br>                                    //     [
+<br>                                    //         "< li>MacBook Air< /li>",
+<br>                                    //         "< li>Dell Monitor< /li>",
+<br>                                    //         "< li>USB-C Hub< /li>"
+<br>                                    //     ]
+<br>                                    //         .join('') plakt die stukjes aan elkaar zonder tussenstuk
+<br>                                    //     Resultaat na join:
+<br>                                    //         < li>MacBook Air< /li>< li>Dell Monitor< /li>< li>USB-C Hub< /li>
+<br>                                    //     Dit is één string, klaar om in innerHTML te zetten.
+<br>                                    //     Waarom is join('') nodig?
+<br>                                    //         Omdat .map() een array geeft.
+<br>                                    //         innerHTML verwacht een string, niet een array.
+<br>                                    //     join('') zorgt ervoor dat:
+<br>                                    //         ["< li>1< /li>","< li>2< /li>"]
+<br>                                    //     wordt:
+<br>                                    //         "< li>1< /li>< li>2< /li>"
+<br>                                    const render = () => {
+<br>                                    const list = current === 'Alle'
+<br>                                    ? products
+<br>                                    : products.filter(p => p.cat === current);
+<br>
+<br>                                    itemsEl.innerHTML = list.map(p =>
+<br>                                    `< li class="list-group-item">${p.name}< /li>`
+<br>                                    ).join('');
+<br>                                    crumb.textContent = current;
+<br>                                    };
+<br>
+<br>                                    // event delegation voor alle filter-items
+<br>                                    filters.addEventListener('click', e => {
+<br>                                    const li = e.target.closest('.list-group-item');
+<br>                                    if (!li) return;
+<br>
+<br>                                    current = li.textContent.trim();
+<br>                                    setActive(li);
+<br>                                    render();
+<br>                                    });
+<br>
+<br>                                    // init
+<br>                                    // de functie wordt meteen geladen tijdens de start van de pagina om alle gegevens te laden in de pagina.
+<br>                                    render();
+<br>                                    });
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth7.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H7</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

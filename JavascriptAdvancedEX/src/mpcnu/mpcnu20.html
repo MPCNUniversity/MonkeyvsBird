@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MPCNetwork - Venn-Diagrammen</title>
+    <link rel="stylesheet" href="css/mpcnu20.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<!--
+-->
+
+<body>
+
+
+  <audio id="mijnMuziek" src="audio/audio1.mp3"></audio>
+
+<div class="bottom-right">
+    <h3 class="title3">Ctrl Scrl</h3>
+    <button class="enter-button" onclick="enterSite2()">♫♪♫☺♥</button>
+    <iframe
+    id="fr"
+    name="myFrame"
+    width="600"
+    height="750"
+    src="http://127.0.0.1:8000/foldervennd.html"
+    allow="">
+    </iframe>
+</div>
+
+  <div class="bottom-left">
+    <button class="enter-button" onclick="enterSite3()">Home</button>
+  </div>
+
+<div>
+  <div class="container">
+    <h1 class="title">Folderstructuur</h1>
+    <button class="enter-button" onclick="enterSite()">Logica</button>
+  </div>
+  <div class="container">
+    <h2 class="title">Relaties</h2>
+    <button class="enter-button" onclick="enterSite1()">Venn-Diagrammen</button>
+  </div>
+
+
+</div>
+  <button class="turbo-button" onclick="activateTurbo()">Turbo Mode</button>
+
+    <script>
+    function enterSite() {
+      console.log(`MPCNetwork University - Class in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'mpcnu21.html';
+    }
+        function enterSite1() {
+      console.log(`MPCNetwork University - Class in Session`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'mpcnu20.html';
+    }
+            function enterSite2() {
+      console.log(`MPCNetwork University - Music on`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+      //window.location.href = 'javascriptBasis.html';
+            const audio = document.getElementById("mijnMuziek");
+      audio.play();
+    }
+                  function enterSite3() {
+      console.log(`MPCNetwork University - Music on`);
+      // Vervang de alert met een actie, zoals navigeren naar een andere pagina
+    window.location.href = 'mpcnu30.html';
+    }
+  </script>
+
+  <div class="artefact" style="left: 650px; top: 480px;"></div>
+  <div class="tooltip" style="color: aliceblue;">MPCNetwork - Home</div>
+</div>
+<script src="js/mpcnu6.js"></script>
+<script src="js/buttonmove.js"></script>
+</body>
+</html>

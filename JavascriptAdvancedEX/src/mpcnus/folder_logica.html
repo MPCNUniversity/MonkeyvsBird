@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPCNUniversity - Logica</title>
+    <script src="css/mpcnu11.css"></script>
+
+</head>
+<!--
+Dit is de officiële website van MPCNUniversity-Javascript Basis
+Dank gaat uit naar de originele auteur van deze opleiding : mr. Tom Vanhoutte
+Zonder wiens deskundige uitleg deze site niet mogelijk zou zijn geweest!
+Dank u Tom Vanhoutte.
+Dank gaat ook uit naar de maker van deze pagina's : mr. Friedel Majoor
+Zonder wiens input deze site niet zou bestaan.
+Dank u Friedel Majoor.
+
+Aan alle studenten! Welkom & Happy coding
+-->
+<body  style="background-color: antiquewhite; cursor: url('im/pen.png') 10 10, auto;" >
+    <h1 class="titel">Logica</h1>
+    <ol class="hoofdstukken">
+        <li>
+            <h2 class="hoofdstuk">Wat is Logica?</h2>
+            <p class="tekst">
+            <b>Javascript is NIET Java.</b>  Hoewel de namen op elkaar lijken, is Java een volledig andere, objectgeoriënteerde programmeertaal. De keuze voor de naam "JavaScript" was destijds een marketingbeslissing en heeft niet te maken met Java.
+            </p>
+            <p class="tekst">
+                 <b>JavaScript</b> is een veelzijdige programmeertaal die voornamelijk wordt gebruikt voor webontwikkeling. Het stelt ontwikkelaars in staat om interactiviteit op websites mogelijk te maken, zoals het reageren op gebruikersacties zoals klikken, slepen, swipen, en typen. JavaScript wordt met name gebruikt in <b>front-end development</b>, dat wil zeggen op de client-side (in de browser). Dankzij de opkomst van frameworks zoals <b>Node.js</b> kan JavaScript ook op de server-side worden gebruikt, waardoor het een volledige full-stack programmeertaal is geworden.
+            </p>
+            <p class="tekst">
+                <b>Belangrijke kenmerken van Javascript:</b>
+            </p>
+            <p class="tekst">
+                <ul>
+                    <li><b>platformonafhankelijk:</b> Javascript werkt in elke moderne webbrowser en is daarmee een van de meest toegankelijke programmeertalen.</li>
+                    <li><b>Interactiviteit:</b> Het voegt dynamische en interactieve elementen toe aan websites, zoals formuliervalidatie, animaties, en het dynamisch aanpassen van inhoud.</li>
+                    <li><b>Case-sensitive:</b> JavaScript maakt onderscheid tussen hoofdletters en kleine letters.  myVariable en myvariable zijn twee verschillende dingen.</li>
+                    <li><b>Client-side en Server-side:</b> Naast client-side gebruik met frameworks als React, Vue, of Angular, is JavaScript dankzij Node.js ook populair geworden voor server-side development.</li>
+                </ul>
+            </p>
+        </li>
+
+        <li>
+            <h2 class="hoofdstuk">Historiek</h2>
+            <p class="tekst">
+                In het begin van het internet had elke browser zijn eigen scripttaal voor het web:
+            </p>
+            <p class="tekst">
+                <ul>
+                    <li><b>Netscape:</b> Livescript</li>
+                    <li><b>Internet Explorer:</b> Jscript</li>
+                </ul>
+            </p>
+            <p class="tekst">
+                JavaScript evolueerde echter snel naar een universele standaard die breed werd geaccepteerd. Tegenwoordig is JavaScript de enige front-end taal die samen met HTML en CSS wordt gebruikt voor het maken van interactieve webpagina's. Sinds 2009 wordt de ontwikkeling van JavaScript beheerd door <b>ECMA International</b>, en de officiële naam van de standaard is <b>ECMAScript</b> (afgekort ES). ECMAScript 5 (ES5) is jarenlang de norm geweest, maar sinds 2015 zijn we overgestapt naar <b>ES6</b> (ook wel ECMAScript 2015 genoemd).
+            </p>
+            <p class="tekst">
+                <b>Versies en nieuwe standaarden:</b>
+            </p>
+            <p class="tekst">
+                <ul>
+                    <li><b>ES6 (ECMAScript 2015)</b>: Introduceerde veel nieuwe functies zoals let, const, pijlfuncties(=>), en classes. Dit was een grote sprong voorwaarts voor de taal en wordt nog steeds breed ondersteund door moderne browsers.</li>
+                    <li><b>ES7 t/m ES9</b>: Jaarlijks worden er nieuwe functies toegevoegd. Bijvoorbeeld, <b>ES7(2016)</b> voegde de Array.prototype.includes() methode toe, en <b>ES8(2017)</b> introduceerde <b>asynchrone functies</b> (async/await).</li>
+                    <li><b>ES9 en verder</b>: Dit zijn de meest recente versies met kleinere updates, zoals <b>object rest/spread</b> en verbeteringen aan asynchrone iteratie. Sinds <b>ES6</b> volgen de releases een jaarlijks schema, waarbij telkens kleine verbeteringen worden doorgevoerd.</li>
+                </ul>
+            </p>
+            <p class="tekst">
+                <b>Backward compatibility:</b>
+            </p>
+            <p class="tekst">
+                JavaScript is ontworpen om <b>Achterwaarts compatibel</b> te zijn. Dit betekent dat code geschreven in oudere versies zoals ES5 nog steeds werkt in moderne browsers die ES6 en hoger ondersteunen. Veel oudere browsers ondersteunen echter mogelijk niet alle nieuwe functies van ES6 en verder, waardoor het soms nodig is om zogenaamde <b>polyfills</b> te gebruiken of code te "transpilen" naar oudere standaarden (bijvoorbeeld met behulp van tools zoals Babel).
+            </p>
+            <p class="tekst">
+                <b>Opmerking:</b>
+            </p>
+            <p class="tekst">
+                Hoewel de meeste moderne browsers ES6 en latere versies ondersteunen, zijn er oudere browsers waarin sommige nieuwe functies niet werken. Daarom is het belangrijk om te testen of je code functioneert in de browsers die je doelgroep gebruikt, vooral als je ook oudere systemen wilt ondersteunen.
+            </p>
+        </li>
+
+        <li>
+            <h2 class="hoofdstuk">Wanneer gebruik je Javascript</h2>
+            <p class="tekst">
+                Hoewel JavaScript een krachtige tool is voor het toevoegen van interactiviteit en dynamiek aan websites, zijn er bepaalde taken waarvoor het gebruik van JavaScript tegenwoordig niet meer nodig is dankzij de verbeteringen in CSS3 en HTML5. Door deze evoluties kun je veel functionaliteiten realiseren zonder afhankelijk te zijn van JavaScript, wat vaak resulteert in snellere en betere prestaties.
+            </p>
+            <p class="tekst">
+                Hier zijn enkele gevallen waarin je geen JavaScript hoeft te gebruiken:
+            </p>
+            <ul>
+                <li>CSS neemt nu het volgende over:</li>
+                <li>Image swaps (rollover): Voor het wisselen van afbeeldingen bij hover of klik kun je puur CSS gebruiken, zonderdat er JavaScript nodig is. Dit gebeurt meestal met behulp van de :hover pseudoklasse.</li>
+                <li>Rollover menus: Interactieve navigatiemenu's die uitklappen wanneer een gebruiker eroverheen hovert, kunnen volledig met CSS worden gemaakt door gebruik te maken van de :hover pseudoklasse en display of visibility eigenschappen.</li>
+                <li>Tooltips: Eenvoudige tooltips kunnen ook met CSS worden gerealiseerd door gebruik te maken van :hover of :focus en ::before of ::after om de tooltip te tonen bij interactie.</li>
+                <li>CSS3 Transities en Animaties:</li>
+                <li>CSS3 biedt krachtige tools voor het maken van animaties en overgangen (transitions). Waar voorheen JavaScript nodig was voor animaties, kun je nu vloeiende overgangen en complexere animaties maken met CSS. Dit omvat onder andere fades, slides, en andere visuele effecten zonder één enkele regel JavaScript.</li>
+                <li>HTML5 Form Controls:</li>
+                <li>Met HTML5 zijn er nieuwe, ingebouwde formulierelementen en validatiemogelijkheden geïntroduceerd. Elementen zoals datumprikkers, kleurenkiezers, en invoervalidatie (zoals vereiste velden en patroonvalidatie) kunnen rechtstreeks met HTML worden uitgevoerd, zonder dat JavaScript-scripts nodig zijn om basisvalidatie of invoermethoden te implementeren.</li>
+            </ul>        
+            <p class="tekst">
+                <b>Belangrijkste voordelen van het gebruik van CSS3 en HTML5 in plaats van JavaScript:</b>
+            </p>
+            <ul>
+                <li><b>Prestatieverbeteringen</b>: Omdat CSS en HTML natively door de browser worden ondersteund en uitgevoerd, zijn ze vaak sneller dan JavaScript-oplossingen, die extra rekenkracht en scripts vereisen.</li>
+                <li><b>Toegankelijkheid en eenvoud</b>: Voor eenvoudige visuele effecten en validatie zijn CSS3 en HTML5 eenvoudiger te implementeren, begrijpen, en onderhouden.</li>
+                <li><b>Responsiviteit</b>: CSS kan dynamisch reageren op verschillende schermformaten en apparaten met media queries, zonder dat je JavaScript nodig hebt om de lay-out aan te passen.</li>
+            </ul>
+            <p class="tekst">
+                <b>Wanneer je wel JavaScript moet gebruiken:</b>
+            </p>
+            <p class="tekst">
+                Ondanks de voordelen van CSS3 en HTML5 zijn er nog veel gevallen waarin JavaScript essentiëel blijft, zoals:
+            </p>
+            <ul>
+                <li><b>Complexe interacties</b>: Wanneer je geavanceerde functionaliteiten zoals drag-and-drop, dynamische gegevensverwerking of gebruikersinterfacecomponenten zoals modals of carrousels wilt implementeren.</li>
+                <li><b>Asynchrone interactie met servers</b>: Voor taken zoals het ophalen van gegevens zonder de pagina te vernieuwen (bijv. via AJAX of Fetch API).</li>
+                <li><b>Geavanceerde gebruikerservaring</b>: Denk aan single-page applicaties (SPA's) of frameworks zoals React, Vue, of Angular, die intensief gebruik maken van JavaScript om dynamischer webapplicaties te bouwen.</li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="hoofdstuk">JavaScript jargon</h2>
+            <p>
+                Javascript JARGON
+            </p>
+            <ul>
+                <li>Data types
+                    <ul>
+                        <li>Numeriek</li>
+                        <li>Strings</li>
+                        <li>Booleans</li>
+                        <li>Arrays</li>
+                        <li>Objects
+                            <ul>
+                                <li>built-in: window, document, ...zijn allemaal objecten met hun eigen properties (eigenschappen).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Variabelen: var, let, const</li>
+                <li>Operatoren
+                    <ul>
+                        <li>Logische en wiskundige operatoren</li>
+                    </ul>
+                </li>
+                <li>Functies
+                    <ul>
+                        <li>zijn collecties (verzamelingen) van statements die een waarde retourneren.</li>
+                    </ul>
+                </li>
+                <li>Controle structuren
+                    <ul>
+                        <li>If, else, switch</li>
+                    </ul>
+                </li>
+                <li>Loops
+                    <ul>
+                        <li>For, while, do while, ...</li>
+                    </ul>
+                </li>
+                <li>De DOM (DOCUMENT OBJECT MODEL) voor JavaScript
+                    <ul>
+                        <li>Veel methodes
+                            <ul>
+                                <li>Bijv. document.getElementById, ...</li>
+                            </ul>
+                        </li>
+                        <li>Veel properties
+                            <ul>
+                                <li>Value, checked, className, id, ...</li>
+                            </ul>
+                        </li>
+                        <li>Event listeners</li>
+                        <li>Hoisting</li>
+                        <li>Event handling</li>
+                        <li>Scope en closures</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <h2 class="hoofdstuk">CONSOLE (Google Chrome - Developer Tools)</h2>
+            <p class="tekst">
+                De Console in Google Chrome en andere moderne browsers is een krachtig hulpmiddel waarmee je direct Javascript kunt uitvoeren en interactie kunt hebben met je code. Het biedt de mogelijjkheid om snel te testen, fouten op te sporen en zelfs je code te optimaliseren door gebruik te maken van verschillende ingebouwde functies.
+            </p>
+            <p class="tekst">
+                <b>Wat is de Console?</b>
+                <br>
+                De Console is een onderdeel van de ontwikkelaarstools van een browser en stelt je in staat om javaScript direct uit te voeren, variabelen en functies te evalueren, en interactie te hebben met de DOM (Document Object Model). Het is één van de meest waardevolle tools voor zowel beginners als ervaren ontwikkelaars bij het debuggen en analyseren van JavaScript-code.
+                <br>
+                In de console kun je JavaScript opdrachten typen en direct het resultaat zien.
+                <br>
+                Bijvoorbeeld:
+                <br>
+                <img src="im/voorbeeldconsole.png">
+                <br>
+                Om dit te openen in google chrome:
+                <br>
+                Druk F12 en klik op het tabblad CONSOLE
+                <br>
+                of
+                <br>
+                CTRL + SHIFT + j
+                <br>
+                <br>
+                Om dit te openen in firefox:
+                <br>
+                Druk F12 en klik op het tabblad WEB CONSOLE
+                <br>
+                of
+                <br>
+                CTRL + SHIFT + k 
+                <br>
+                <br>
+                Dit maakt de console ideaal voor snel testen en debuggen van codefragmenten.
+                <br>
+                <br>
+                Functies die we later zullen gebruiken binnen onze editor zijn console.log, console.time, console.table, console.group, ...
+            </p>
+
+            <ol class="subhoofdstukken">
+                <li>
+                    <h3 class="subhoofdstuk">Variabelen</h3>
+                </li>
+                <p class="tekst">
+                    <b>VAR</b>
+                </p>
+                <p class="tekst">
+                    In JavaScript gebruiken we het sleutelwoord var om variabelen te declareren. Een variabele is een soort "doosje" waarin we gegevens kunnen opslaan, zoals getallen of tekst. We gebruiken variabelen om deze gegevens later opnieuw te gebruiken in ons script. 
+                    <br>
+                    Het gebruik van var was lange tijd de standaard manier om variabelen aan te maken, maar tegenwoordig gebruiken veel programmeurs liever let of const, omdat var enkele eigenschappen heeft die voor beginners verwarrend kunnen zijn. Desondanks is het belangrijk om te begrijpen hoe var werkt, omdat je het vaak tegenkomt in oudere code. 
+                    <br>
+                    Een belangrijk kenmerk van var is dat variabelen die ermee worden gedeclareerd, <b>function-scope</b> of <b>globale scope</b> hebben. Dit betekent dat als je een variabele met var aanmaakt binnen een functie, die alleen binnen die functie beschikbaar is. Maar als je var buiten een functie gebruikt, wordt de variabele globaal, wat betkent dat het overal in je script toegankelijk is.
+                </p>
+                <p class="tekst">
+                    <b>Handeling: Hoe declareer en gebruik je een variabele met var?</b>
+                    <br>
+                    Het declareren van een variabele met var is eenvoudig. Volg deze stappen:
+                    <br>
+                    <br>
+                    <h4>
+                        <i>
+                        var mijnGetal=10;
+                        <br>
+                        console.log(mijnGetal);
+                        </i>
+                    </h4>
+                </p>
+            </ol>
+        </li>
+
+    </ol>
+</body>
+</html>

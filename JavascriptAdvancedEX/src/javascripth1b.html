@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>mpcnetwork javascript cursus</title>
+    <meta name="author" content="Friedel Majoor">
+    <script type="module" src="./js/main2.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="bg-primary-translucent">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn btn-primary-subtle border rounded-pill" style="color: rgb(224 141 45/ 0.973); background: linear-gradient(
+              135deg,
+              rgba(173, 216, 230, 0.6),
+              rgba(255, 182, 193, 0.35)
+          );">
+                        <strong><em>MPCNetwork</em></strong>
+                        <img src="images/hexie.gif" class="rounded-pill m-1" style="background-color: rgba(224 141 45/ 0.973)">presents
+                        <i class="bx bxs-hot" style="color: rgb(225 141 45 /0.973)"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active border elegant-link" aria-current="page" href="home.html" style="background-color: rgba(255, 228, 196, 0.452); color: rgb(224 141 45/ 0.973);font-size: larger;"><strong><em>Home</em></strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border elegant-link" href="mpc.html" style="background-color: rgb(255 228 196/ 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;"> <strong><em>Overzicht</em></strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle border elegant-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="background-color: rgba(255, 228, 196, 0.445); color:rgb(224 141 45/ 0.973); font-size: larger;">
+                                    <strong><em>Oefeningen</em></strong>
+                                </a>
+                                <ul class="dropdown-menu" style="background: url(images/rangerOnlineOcean.gif);">
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptp10.html" style="background: url(images/rangerOnlineOcean.gif);">cursus oefeningen</a></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascripth1.html" style="background: url(images/rangerOnlineOcean.gif);">oefenbundel oefeningen</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item elegant-link m-2" href="javascriptoefenbundelrekenmachine.html" style="background: url(images/rangerOnlineOcean.gif);">Rekenmachine</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--  content -->
+
+            <section class="container py-4" id="h1-unit-converter">
+                <h3>H1b – Unit Converter</h3>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text">Centimeters</span>
+                            <input id="uc_cm" type="number" class="form-control" placeholder="bv.180">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group">
+                            <button id="uc_to_m" class="btn btn-outline-secondary">→
+                                meter</button>
+                            <button id="uc_to_in" class="btn btn-outline-secondary">→
+                                inch</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <span class="me-2">Meter:</span><span id="uc_m" class="badge bg-8 text-bg-secondary">-</span>
+                        <span class="ms-4 me-2">Inch:</span><span id="uc_in" class="badge text-bg-secondary">-</span>
+                    </div>
+                </div>
+            </section>
+            <section class="container py-4" id="ex-m1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-5 text-white">Oefening H1b — unit conversion</div>
+                            <div class="card-body">
+                                <div id="m1_out" class="alert alert-secondary mb-0" role="status" aria-live="polite">
+                                    <p>
+<br>                                    // h1b
+<br>                                    document.addEventListener('DOMContentLoaded', () => {
+<br>                                    const inpCm = document.getElementById('uc_cm');
+<br>                                    const btnToM = document.getElementById('uc_to_m');
+<br>                                    const btnToIn = document.getElementById('uc_to_in');
+<br>                                    const badgeM = document.getElementById('uc_m');
+<br>                                    const badgeIn = document.getElementById('uc_in');
+<br>
+<br>                                    function invalid() {
+<br>                                    badgeM.textContent = 'ongeldig';
+<br>                                    badgeIn.textContent = 'ongeldig';
+<br>                                    }
+<br>
+<br>                                    btnToM.addEventListener('click', () => {
+<br>                                    const cmVal = inpCm.value.trim();
+<br>                                    if (cmVal === '') {
+<br>                                    invalid();
+<br>                                    return;
+<br>                                    }
+<br>
+<br>                                    const cm = Number(cmVal);
+<br>                                    if (cm < 0) {
+<br>                                    invalid();
+<br>                                    return;
+<br>                                    }
+<br>
+<br>                                    const meter = Number((cm / 100).toFixed(2));
+<br>                                    badgeM.textContent = meter;
+<br>                                    });
+<br>
+<br>                                    btnToIn.addEventListener('click', () => {
+<br>                                    const cmVal = inpCm.value.trim();
+<br>                                    if (cmVal === '') {
+<br>                                    invalid();
+<br>                                    return;
+<br>                                    }
+<br>
+<br>                                    const cm = Number(cmVal);
+<br>                                    if (cm < 0) {
+<br>                                    invalid();
+<br>                                    return;
+<br>                                    }
+<br>
+<br>                                    const inch = Number((cm / 2.54).toFixed(2));
+<br>                                    badgeIn.textContent = inch;
+<br>                                    });
+<br>                                    });
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <span ><a href="javascripth2.html" class="btn btn-primary-translucent border mt-2 bg-8 text-white align-items-end elegant-link">naar oefening H2</a></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
