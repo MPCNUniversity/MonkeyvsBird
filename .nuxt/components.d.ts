@@ -18,6 +18,7 @@ export const ButtonsArtifact: typeof import("../components/Buttons/ButtonsArtifa
 export const ButtonsAvonturiers: typeof import("../components/Buttons/ButtonsAvonturiers.vue").default
 export const CalenderCard: typeof import("../components/CalenderCard.vue").default
 export const CardDeck: typeof import("../components/CardDeck.vue").default
+export const ControlPanel: typeof import("../components/ControlPanel.vue").default
 export const CursorSelector: typeof import("../components/CursorSelector.vue").default
 export const FullContentDial: typeof import("../components/FullContentDial.vue").default
 export const Kalender: typeof import("../components/Kalender/Kalender.vue").default
@@ -63,6 +64,7 @@ export const LazyButtonsArtifact: LazyComponent<typeof import("../components/But
 export const LazyButtonsAvonturiers: LazyComponent<typeof import("../components/Buttons/ButtonsAvonturiers.vue").default>
 export const LazyCalenderCard: LazyComponent<typeof import("../components/CalenderCard.vue").default>
 export const LazyCardDeck: LazyComponent<typeof import("../components/CardDeck.vue").default>
+export const LazyControlPanel: LazyComponent<typeof import("../components/ControlPanel.vue").default>
 export const LazyCursorSelector: LazyComponent<typeof import("../components/CursorSelector.vue").default>
 export const LazyFullContentDial: LazyComponent<typeof import("../components/FullContentDial.vue").default>
 export const LazyKalender: LazyComponent<typeof import("../components/Kalender/Kalender.vue").default>

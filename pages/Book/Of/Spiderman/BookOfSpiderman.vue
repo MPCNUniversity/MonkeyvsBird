@@ -5,7 +5,15 @@ import ControlPanel from '@/components/ControlPanel.vue'
 const sources = [
   { label: 'Foto', value: '/images/WorldStateEngine.png' },
   { label: 'Camera', value: 'camera' },
-  { label: 'GPU Output', value: '/images/ussgrit.png' },
+  { label: 'GPU Output', value: '/images/sittingwithMichael.png' },
+  { label: 'Kamp Dinotopia', value: '/images/prehistoricdigsite.png' },
+  { label: 'Reis naar prehistorie', value: '/images/prehistory.png' },
+  { label: 'Jungle School', value: '/images/JungleSchool.png' },
+  { label: 'Jungle adventure', value: '/images/JungleAdventure.png' },
+  { label: 'Jungle class', value: '/images/Junglepanter.png' },
+  { label: 'Arc de Friedel', value: '/images/ArcdeFriedel.png' },
+  { label: 'Seer orb', value: '/images/missingmichael.png' },
+    { label: 'hall desk', value: '/images/pionbord.png' },
 ]
 
 const selectedSource = ref(sources[0].value)

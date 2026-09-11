@@ -18,6 +18,7 @@ interface _GlobalComponents {
   'ButtonsAvonturiers': typeof import("../../components/Buttons/ButtonsAvonturiers.vue").default
   'CalenderCard': typeof import("../../components/CalenderCard.vue").default
   'CardDeck': typeof import("../../components/CardDeck.vue").default
+  'ControlPanel': typeof import("../../components/ControlPanel.vue").default
   'CursorSelector': typeof import("../../components/CursorSelector.vue").default
   'FullContentDial': typeof import("../../components/FullContentDial.vue").default
   'Kalender': typeof import("../../components/Kalender/Kalender.vue").default
@@ -63,6 +64,7 @@ interface _GlobalComponents {
   'LazyButtonsAvonturiers': LazyComponent<typeof import("../../components/Buttons/ButtonsAvonturiers.vue").default>
   'LazyCalenderCard': LazyComponent<typeof import("../../components/CalenderCard.vue").default>
   'LazyCardDeck': LazyComponent<typeof import("../../components/CardDeck.vue").default>
+  'LazyControlPanel': LazyComponent<typeof import("../../components/ControlPanel.vue").default>
   'LazyCursorSelector': LazyComponent<typeof import("../../components/CursorSelector.vue").default>
   'LazyFullContentDial': LazyComponent<typeof import("../../components/FullContentDial.vue").default>
   'LazyKalender': LazyComponent<typeof import("../../components/Kalender/Kalender.vue").default>
